@@ -1,5 +1,5 @@
 {
-  "name": "vue-component-library-boilerplate",
+  "name": "@coloration/liba",
   "version": "0.0.1",
   "files": [
     "dist"
@@ -20,6 +20,8 @@
     "build:book": "build-storybook"
   },
   "dependencies": {
+    "@vueuse/components": "^7.5.3",
+    "@vueuse/core": "^7.5.3",
     "vue-demi": "latest"
   },
   "peerDependencies": {
@@ -41,12 +43,12 @@
     "@vue/compiler-sfc": "^3.2.6",
     "babel-loader": "^8.2.2",
     "typescript": "^4.3.2",
-    "vite-plugin-windicss": "^1.3.0",
     "vite": "^2.4.4",
+    "vite-plugin-windicss": "^1.3.0",
+    "vue": "^3.2.6",
     "vue-loader": "^16.5.0",
     "vue-tsc": "^0.2.2",
-    "vue": "^3.2.6",
-    "windicss-webpack-plugin": "^1.4.6",
-    "windicss": "^3.1.7"
+    "windicss": "^3.1.7",
+    "windicss-webpack-plugin": "^1.4.6"
   }
 }

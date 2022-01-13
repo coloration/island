@@ -8,7 +8,11 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "types" : [ 
+      "vite/client" ,  // https://github.com/johnsoncodehk/volar/discussions/592
+      // ... 
+    ] 
   },
-  "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.tsx", "lib/**/*.vue"]
+  "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.tsx", "lib/**/*.vue", "lib/button/Button.stories.js"],
 }

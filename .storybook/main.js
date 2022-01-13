@@ -1,5 +1,5 @@
 const path = require('path')
-const WindiCSS = require('windicss-webpack-plugin').default
+const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 
 module.exports = {
   "stories": [
@@ -10,8 +10,9 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials"
   ],
+  
   webpackFinal: (config) => {
-    config.plugins.push(new WindiCSS())
+    config.plugins.push(new WindiCSSWebpackPlugin())
     return config
   },
 }
