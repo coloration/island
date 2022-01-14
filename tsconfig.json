@@ -14,5 +14,5 @@
       // ... 
     ] 
   },
-  "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.tsx", "lib/**/*.vue", "lib/button/Button.stories.js"],
+  "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.tsx", "lib/**/*.vue", "lib/button/IButton.stories.js"],
 }
