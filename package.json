@@ -20,6 +20,7 @@
     "build:book": "build-storybook"
   },
   "dependencies": {
+    "@coloration/kit": "^1.6.2",
     "@vueuse/components": "^7.5.3",
     "@vueuse/core": "^7.5.3",
     "vue-demi": "latest"
