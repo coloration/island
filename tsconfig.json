@@ -10,8 +10,8 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types" : [ 
-      "vite/client" ,  // https://github.com/johnsoncodehk/volar/discussions/592
-      // ... 
+      "vite/client",              // https://github.com/johnsoncodehk/volar/discussions/592
+      "unplugin-icons/types/vue", // https://github.com/antfu/unplugin-icons/issues/128
     ] 
   },
   "include": ["lib/**/*.ts", "lib/**/*.d.ts", "lib/**/*.tsx", "lib/**/*.vue", "lib/button/IButton.stories.js"],

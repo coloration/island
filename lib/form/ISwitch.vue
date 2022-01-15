@@ -71,7 +71,7 @@ function handleChange (_: Event) {
 }
 
 .i-switch-rounded {
-  @apply bg-white shadow-sm absolute block rounded-full w-5 h-5;
+  @apply bg-white shadow-sm absolute block rounded-full w-5 h-5 transition-transform transform-gpu translate-x-0;
   top: 0.0625rem;
   left: 0.0625rem;
 }
@@ -86,7 +86,7 @@ function handleChange (_: Event) {
 }
 
 .i-switch-checked .i-switch-rounded {
-  left: 1.3125rem;
+  transform: translateX(1.25rem);
 }
 
 .i-switch-disabled .i-switch-wrapper {
