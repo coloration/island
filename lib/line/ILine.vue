@@ -10,14 +10,14 @@ defineProps({
 
 </script>
 <template>
-<div class="i-demo" v-bind="$attrs">
+<div class="i-line" v-bind="$attrs">
   <slot />
 </div>
 </template>
 <style>
 
-.i-demo {
-  @apply block;
+.i-line {
+  @apply border-b border-gray-200;
 }
 
 </style>
