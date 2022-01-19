@@ -25,6 +25,9 @@ const props = defineProps({
     type: String as PropType<'red' | 'green' | 'gray'>,
     default: 'gray'
   },
+  id: {
+    type: String
+  }
 })
 
 
@@ -37,6 +40,7 @@ const props = defineProps({
       </span>
       <input
         v-bind="$attrs"
+        :id="id"
         class="i-input-inner"
         :disabled="disabled"
         :class="[

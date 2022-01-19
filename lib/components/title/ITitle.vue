@@ -11,8 +11,8 @@ export default {
   render() {
     return h(
       'h' + this.level, // 标签名
-      { class: 'i-title', }, // prop 或 attribute
-      this.$slots.default() // 包含其子节点的数组
+      { class: 'i-title ' }, // prop 或 attribute
+      this.$slots.default ? this.$slots.default() : undefined // 包含其子节点的数组
     )
   }
 }

@@ -6,11 +6,10 @@ defineProps({
     default: 'md'
   },
   border: {
-    type: [String, Boolean],
-    default: false
+    type: Boolean,
   },
   notice: {
-    type: [String, Boolean],
+    type: Boolean,
   },
   src: {
     type: String
@@ -27,6 +26,7 @@ defineProps({
   class="i-avatar" 
   :class="[
     'i-avatar-' + size,
+    border ? 'i-avatar-bordered' : ''
   ]"
   v-bind="$attrs">
   <span class="i-avatar-name">{{ name }}</span>
@@ -38,6 +38,12 @@ defineProps({
 
 .i-avatar {
   @apply relative;
+  width: 1em;
+  height: 1em;
+}
+
+.i-avatar-bordered {
+  @apply border-2 border-white rounded-full;
 }
 
 .i-avatar-name {
@@ -51,18 +57,48 @@ defineProps({
 }
 
 .i-avatar-notice {
-  @apply absolute w-3 h-3 bg-red-500 border-2 border-white rounded-full;
+  @apply absolute bg-red-500 border-2 border-white rounded-full;
 }
 
 .i-avatar-xs { 
-  width: 24px; height: 24px; font-size: 24px; } 
+  font-size: 24px; 
+} 
+
+.i-avatar-xs .i-avatar-notice {
+  @apply w-2 h-2 top-0 right-0;
+}
+
 .i-avatar-sm { 
-  width: 28px; height: 28px; font-size: 28px; } 
+  font-size: 28px; 
+} 
+
+.i-avatar-sm .i-avatar-notice {
+  @apply w-2.5 h-2.5 top-0 right-0;
+}
+
 .i-avatar-md { 
-  width: 32px; height: 32px; font-size: 32px; } 
+ font-size: 32px; 
+} 
+
+.i-avatar-md .i-avatar-notice {
+  @apply w-2.5 h-2.5 top-0 right-0;
+}
+
 .i-avatar-lg { 
-  width: 40px; height: 40px; font-size: 40px; } 
+  font-size: 40px; 
+} 
+
+.i-avatar-lg .i-avatar-notice {
+  @apply w-3 h-3 top-0 right-0;
+}
+
 .i-avatar-xl { 
-  width: 64px; height: 64px; font-size: 64px; }
+  font-size: 64px; 
+}
+
+.i-avatar-xl .i-avatar-notice {
+  @apply w-3 h-3 top-1 right-1;
+}
+
 
 </style>

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { PropType } from 'vue-demi'
-import { IPlainOption } from '../type'
+import { IBreadcrumbOption } from '../../type'
 
-type BreadcrumbOption = IPlainOption<string, string | Function> & { icon: any }
+
 
 const emits = defineEmits(['change'])
 
@@ -12,15 +12,19 @@ defineProps({
     default: 'normal'
   },
   options: {
-    type: Array as PropType<BreadcrumbOption[]>
+    type: Array as PropType<IBreadcrumbOption[]>
   },
   split: {
     type: Object as PropType<any>,
     default: '/'
+  },
+  activeAll: {
+    type: Boolean,
+    default:false
   }
 })
 
-function handleClick (opt: BreadcrumbOption, i: number) {
+function handleClick (opt: IBreadcrumbOption, i: number) {
 
 }
 
@@ -32,7 +36,8 @@ function handleClick (opt: BreadcrumbOption, i: number) {
     <span v-if="i !== 0" class="text-gray-400 px-2">{{ split }}</span>
     <span 
       @click="handleClick(opt, i)"
-      class="text-gray-500 hover:text-indigo-500 cursor-pointer" 
+      :class="[activeAll ? 'text-indigo-500' : 'text-gray-500']"
+      class="hover:text-indigo-500 cursor-pointer" 
     >{{ opt.name }}</span>
   </li>
 </ul>

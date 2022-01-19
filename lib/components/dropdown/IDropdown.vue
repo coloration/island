@@ -2,7 +2,7 @@
 import { PropType, ref } from 'vue-demi'
 import { useEventListener } from '@vueuse/core'
 import { OnClickOutside } from '@vueuse/components'
-import { IPlainOption } from '../type'
+import { IPlainOption } from '../../type'
 
 const emits = defineEmits(['change'])
 

@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { PropType, ref } from 'vue-demi'
-import { IPlainOption } from '../type'
+import { IPlainOption, ITabOption } from '../../type'
 
-type TabOption = IPlainOption<string, string | Function> & { icon: any }
+
 
 const emits = defineEmits(['change'])
 
@@ -12,13 +12,13 @@ defineProps({
     default: 'normal'
   },
   options: {
-    type: Array as PropType<TabOption[]>
+    type: Array as PropType<ITabOption[]>
   },
 })
 
 const curr = ref(0)
 
-function handleClick (opt: TabOption, idx: number) {
+function handleClick (opt: ITabOption, idx: number) {
   emits('change', opt, idx)
   curr.value = idx
 }

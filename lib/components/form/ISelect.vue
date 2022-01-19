@@ -5,13 +5,16 @@ defineProps({
     type: String as PropType<'primary' | 'normal' | 'ghost'>,
     default: 'primary'
   },
+  id: {
+    type: String
+  }
 })
 
 
 </script>
 <template>
 <div class="i-select">
-  <select v-bind="$attrs" class="i-select-inner">
+  <select v-bind="$attrs" :id="id" class="i-select-inner">
     <slot></slot>
   </select>
 </div>
