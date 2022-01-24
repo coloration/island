@@ -4,7 +4,7 @@ import { h } from 'vue-demi'
 export default {
   props: {
     level: {
-      type: Number,
+      type: [Number, String],
       default: 1
     }
   },
@@ -21,7 +21,7 @@ export default {
 <style>
 
 .i-title {
-  @apply font-bold text-gray-800 m-0;
+  @apply font-bold text-gray-800;
 }
 
 h1.i-title {
@@ -29,11 +29,11 @@ h1.i-title {
 }
 
 h2.i-title {
-  @apply text-xl;
+  @apply text-2xl;
 }
 
 h3.i-title {
-  @apply text-lg;
+  @apply text-xl;
 }
 
 h4.i-title {

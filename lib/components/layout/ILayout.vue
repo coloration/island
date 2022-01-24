@@ -21,7 +21,7 @@ defineProps({
 <style>
 
 .i-layout {
-  @apply w-full h-full flex-1 flex items-stretch overflow-auto;
+  @apply h-full flex-1 flex items-stretch overflow-auto;
 }
 
 .i-layout-vertical {

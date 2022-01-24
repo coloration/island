@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { IPage } from '../../widgets'
-import { ITab, ILine, ITitle, IText, IButton, IInput } from '../../components'
+import { ITab, ILine, ITitle, IText, IArrowRightButton, IInput } from '../../components'
 import { IBreadcrumbOption, ITabOption } from '../../type'
 import IBreadcrumb from '../../components/breadcrumb/IBreadcrumb.vue';
 
@@ -23,7 +23,6 @@ const breadcrumbOptions: IBreadcrumbOption[] = [
   <div class="mb-2">
     <IInput size="lg" />
   </div>
-
   <ITab :options="tabOptions" />
 
   <div class="mb-4">
@@ -46,7 +45,7 @@ const breadcrumbOptions: IBreadcrumbOption[] = [
   </div>
 
   <div class="flex justify-end pt-2">
-    <IButton type="normal">See All Questions -></IButton>
+    <IArrowRightButton type="normal">See All Questions</IArrowRightButton>
   </div>
 </IPage>
 </template>

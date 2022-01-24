@@ -2,7 +2,7 @@
 import { PropType } from 'vue-demi'
 defineProps({
   size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl'>,
+    type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
     default: 'md'
   },
   border: {
@@ -37,7 +37,7 @@ defineProps({
 <style>
 
 .i-avatar {
-  @apply relative;
+  @apply relative box-border;
   width: 1em;
   height: 1em;
 }
@@ -97,6 +97,14 @@ defineProps({
 }
 
 .i-avatar-xl .i-avatar-notice {
+  @apply w-3 h-3 top-1 right-1;
+}
+
+.i-avatar-xxl { 
+  font-size: 80px; 
+}
+
+.i-avatar-xxl .i-avatar-notice {
   @apply w-3 h-3 top-1 right-1;
 }
 

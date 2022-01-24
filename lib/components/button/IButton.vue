@@ -5,7 +5,7 @@ import { PropType } from 'vue-demi'
 defineProps({
   type: {
     type: String as PropType<'primary' | 'normal' | 'ghost'>,
-    default: 'primary'
+    default: 'normal'
   },
   size: {
     type: String as PropType<'lg' | 'xs' | 'sm' | 'md'>,
@@ -47,7 +47,7 @@ defineProps({
   ]"
 >
   <span class="i-btn-content">
-    <svg v-if="loading" class="block animate-spin w-4 h-4 fill-current shrink-0 mr-1" viewBox="0 0 16 16">
+    <svg v-if="loading" class="w-4 h-4 fill-current animate-spin mr-1" viewBox="0 0 16 16">
       <path d="M8 16a7.928 7.928 0 01-3.428-.77l.857-1.807A6.006 6.006 0 0014 8c0-3.309-2.691-6-6-6a6.006 6.006 0 00-5.422 8.572l-1.806.859A7.929 7.929 0 010 8c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z" />
     </svg>
     <slot></slot>
@@ -58,13 +58,13 @@ defineProps({
 
 .i-btn {
   @apply 
-    font-medium text-sm inline-flex items-center justify-center 
-    rounded leading-5 transition duration-150 ease-in-out shadow-sm
+    font-medium text-sm
+    rounded transition duration-150 ease-in-out shadow-sm
     border border-transparent;
 }
 
-.i-btn-content {
-  @apply inline-flex items-baseline;
+.i-btn-content svg {
+  @apply inline-block align-text-bottom;
 }
 
 .i-btn-primary {
@@ -111,7 +111,11 @@ defineProps({
 }
 
 .i-btn-green {
-  @apply text-green-500 hover: text-green-600;
+  @apply text-green-500 hover:text-green-600;
+}
+
+.i-btn-gray {
+  @apply text-gray-600 hover:text-gray-700;
 }
 
 

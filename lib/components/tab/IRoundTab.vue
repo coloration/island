@@ -26,22 +26,20 @@ function handleClick (opt: ITabOption, idx: number) {
 
 </script>
 <template>
-<div class="mb-8 border-b border-gray-200">
-  <ul class="text-sm font-medium flex flex-nowrap overflow-x-auto gap-6">
+<div class="mb-8">
+  <ul class="text-sm font-medium flex flex-nowrap overflow-x-auto gap-2">
     <li 
       v-for="(opt, i) in options" 
-      class="pb-3"
+      class="inline-flex items-center justify-center text-sm font-medium leading-5 rounded-full px-3 py-1 border shadow-sm"
       :class="[
-          i === curr ? 
-            type === 'underline' 
-              ? 'text-indigo-500 border-b-2 border-indigo-500'
-              : 'text-indigo-500' 
-            : 'text-gray-500 hover:text-gray-600']">
+          i === curr 
+            ? 'bg-indigo-500 text-white border-transparent'
+            : 'text-gray-500 hover:text-gray-600 border-gray-200 hover:border-gray-300']">
       <span 
         @click="handleClick(opt, i)" 
-        class="whitespace-nowrap cursor-pointer"
+        class="whitespace-nowrap cursor-pointer flex items-center gap-2"
         >
-        {{ opt.name }}
+        {{ opt.icon }} {{ opt.name }}
       </span>
     </li>
   </ul>

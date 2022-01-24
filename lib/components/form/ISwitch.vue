@@ -57,7 +57,7 @@ function handleChange (_: Event) {
       aria-hidden="true"></span>
     <span class="sr-only">Toggle</span>
   </label>
-  <div class="i-switch-label">{{labels[checked ? 1 : 0]}}</div>
+  <div v-if="labels[checked ? 1 : 0]" class="i-switch-label">{{labels[checked ? 1 : 0]}}</div>
 </div>
 </template>
 <style>
