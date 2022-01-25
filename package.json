@@ -8,15 +8,9 @@
   "author": "Binyu Wang <406279919@qq.com>",
   "main": "./dist/island.umd.js",
   "module": "./dist/island.es.js",
-  "typings": "./dist/types/main.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/island.es.js",
-      "require": "./dist/island.umd.js"
-    }
-  },
+  "typings": "./dist/typings/main.d.ts",
   "scripts": {
-    "type": "vue-tsc --declaration --emitDeclarationOnly",
+    "build:type": "vue-tsc --declaration --emitDeclarationOnly --declarationDir ./dist/typings",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "dev": "start-storybook -p 6006",
     "build:book": "build-storybook"
@@ -39,7 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@iconify/json": "^1.1.456",
+    "@iconify/json": "^1.1.460",
     "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
