@@ -6,15 +6,17 @@
   ],
   "license": "MIT",
   "author": "Binyu Wang <406279919@qq.com>",
-  "main": "./dist/vue-component-library-boilerplate.umd.js",
-  "module": "./dist/vue-component-library-boilerplate.es.js",
+  "main": "./dist/island.umd.js",
+  "module": "./dist/island.es.js",
+  "typings": "./dist/types/main.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/vue-component-library-boilerplate.es.js",
-      "require": "./dist/vue-component-library-boilerplate.umd.js"
+      "import": "./dist/island.es.js",
+      "require": "./dist/island.umd.js"
     }
   },
   "scripts": {
+    "type": "vue-tsc --declaration --emitDeclarationOnly",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "dev": "start-storybook -p 6006",
     "build:book": "build-storybook"
@@ -27,7 +29,8 @@
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
-    "vue": "^2.0.0 || >=3.0.0"
+    "vue": "^2.0.0 || >=3.0.0",
+    "typescript": "^4.3.2"
   },
   "peerDependenciesMeta": {
     "@vue/composition-api": {
@@ -44,13 +47,12 @@
     "@vitejs/plugin-vue": "^1.3.0",
     "@vue/compiler-sfc": "^3.2.6",
     "babel-loader": "^8.2.2",
-    "typescript": "^4.3.2",
     "unplugin-icons": "^0.13.0",
     "vite": "^2.4.4",
     "vite-plugin-windicss": "^1.3.0",
     "vue": "^3.2.6",
     "vue-loader": "^16.5.0",
-    "vue-tsc": "^0.2.2",
+    "vue-tsc": "^0.31.1",
     "windicss": "^3.1.7",
     "windicss-webpack-plugin": "^1.4.6"
   }
