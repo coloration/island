@@ -2,7 +2,7 @@
 
 
 import { PropType } from 'vue-demi'
-import { Tooltip } from '../tooltip'
+import { ITooltip } from '../tooltip'
 const props = defineProps({
   
   tooltip: {
@@ -31,11 +31,11 @@ const props = defineProps({
       </label>
       <span class="i-label-required" v-if="required">*</span>
     </span>
-    <Tooltip v-if="tooltip" class="ml-2" bg="dark" size="md">
+    <ITooltip v-if="tooltip" class="ml-2" bg="dark" size="md">
       <div class="text-sm text-gray-200">
         {{tooltip}}
       </div>
-    </Tooltip>
+    </ITooltip>
   </span>
 </div>
 </template>
