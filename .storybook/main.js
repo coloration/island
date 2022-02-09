@@ -3,7 +3,8 @@ const IconsPlugin = require('unplugin-icons/webpack')
 module.exports = {
   "stories": [
     "../lib/**/*.stories.mdx",
-    "../lib/**/*.stories.@(js|jsx|ts|tsx)"
+    "../lib/**/*.stories.@(js|jsx|ts|tsx)",
+    './docs/*.stories.mdx'
   ],
   "addons": [
     "@storybook/addon-links",
