@@ -5,12 +5,12 @@ import { IParagraphText, ITitle, IFlexRow, IHangText, IButton, IButtonText, ILin
 <div>
   <div class="px-6">
     <ITitle level="2" class="mb-3">Billing & Invoices</ITitle>
-    <IParagraphText size="sm" class="mb-5">
+    <IParagraphText size="sm" class="mb-6">
       This workspace’s Basic Plan is set to $34 per month and will renew on July 9, 2021.
     </IParagraphText>
 
 
-    <ITitle level="3" class="mb-6">Billing Information</ITitle>
+    <ITitle level="3" class="mb-2">Billing Information</ITitle>
 
     <IFlexRow class="py-3 gap-3">
       <IParagraphText size="sm" bold  class="flex-1">Payment Method</IParagraphText>
@@ -44,7 +44,6 @@ import { IParagraphText, ITitle, IFlexRow, IHangText, IButton, IButtonText, ILin
     <ILine />
 
     <ITitle level="3" class="mt-5">Invoices</ITitle>
-
     
     <table class="table-auto w-full mb-7">
       <thead>
@@ -72,8 +71,9 @@ import { IParagraphText, ITitle, IFlexRow, IHangText, IButton, IButtonText, ILin
           <td class="w-full block md:w-auto md:table-cell py-0.5 md:py-2">
             <IParagraphText size="sm" bold>$349.00</IParagraphText>
           </td>
-          <td class="w-full block md:w-auto md:table-cell py-0.5 md:py-2">
+          <td class="w-full block md:w-auto md:table-cell py-0.5 md:py-2 space-x-2 text-right">
             <IButtonText>HTML</IButtonText>
+            <span class="text-xs text-gray-300 font-light">|</span>
             <IButtonText>PDF</IButtonText>
           </td>
         </tr>
@@ -83,7 +83,7 @@ import { IParagraphText, ITitle, IFlexRow, IHangText, IButton, IButtonText, ILin
 
   <ILine />
 
-  <IFlexRow horizontal="right" class="gap-3 px-6 py-5">
+  <IFlexRow horizontal="end" class="gap-3 px-6 py-5">
     <IButton color="gray">Cancel</IButton>
     <IButton type="primary">Save Changes</IButton>
 

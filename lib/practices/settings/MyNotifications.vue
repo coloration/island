@@ -10,7 +10,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
     <IFlexRow horizontal="between" class="mb-3">
       <div>
-        <ITitle level="5" class="mb-1">Comments and replies</ITitle>
+        <ITitle level="5">Comments and replies</ITitle>
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
       <ISwitch :label-order="1" />
@@ -19,7 +19,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
     <IFlexRow horizontal="between" class="mb-3">
       <div>
-        <ITitle level="5" class="mb-1">Messages</ITitle>
+        <ITitle level="5">Messages</ITitle>
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
       <ISwitch :label-order="1" />
@@ -28,7 +28,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
     <IFlexRow horizontal="between" class="mb-3">
       <div>
-        <ITitle level="5" class="mb-1">Mentions</ITitle>
+        <ITitle level="5">Mentions</ITitle>
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
       <ISwitch :label-order="1" />
@@ -39,7 +39,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
     <IFlexRow horizontal="between" class="mb-3">
       <div>
-        <ITitle level="5" class="mb-1">Shares of my content</ITitle>
+        <ITitle level="5">Shares of my content</ITitle>
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
       <IButton size="sm" color="gray">Manage</IButton>
@@ -48,7 +48,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
     <IFlexRow horizontal="between" class="mb-3">
       <div>
-        <ITitle level="5" class="mb-1">Team invites</ITitle>
+        <ITitle level="5">Team invites</ITitle>
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
       <IButton size="sm" color="gray">Manage</IButton>
@@ -56,9 +56,9 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
     <ILine class="mb-3" />
 
-    <IFlexRow horizontal="between" class="mb-8">
-      <div>
-        <ITitle level="5" class="mb-1">Smart connection</ITitle>
+    <IFlexRow horizontal="between" class="mb-8 gap-2">
+      <div class="flex-1">
+        <ITitle level="5">Smart connection</ITitle>
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
 
@@ -69,7 +69,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
 
   <ILine />
 
-  <IFlexRow horizontal="right" class="gap-3 px-6 py-5">
+  <IFlexRow horizontal="end" class="gap-3 px-6 py-5">
     <IButton color="gray">Cancel</IButton>
     <IButton type="primary">Save Changes</IButton>
   </IFlexRow>

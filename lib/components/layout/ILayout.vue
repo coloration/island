@@ -8,6 +8,7 @@ defineProps({
 })
 
 
+
 </script>
 <template>
 <div 
@@ -21,7 +22,7 @@ defineProps({
 <style>
 
 .i-layout {
-  @apply h-full flex-1 flex items-stretch overflow-auto;
+  @apply h-full flex-1 flex overflow-auto;
 }
 
 .i-layout-vertical {

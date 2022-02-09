@@ -2,12 +2,12 @@
 import { PropType } from 'vue-demi'
 const props = defineProps({
   vertical: {
-    type: String as PropType<'top' | 'middle' | 'bottom'>,
-    default: 'middle'
+    type: String as PropType<'start' | 'center' | 'end'>,
+    default: 'center'
   },
   horizontal: {
-    type: String as PropType<'left' | 'center' | 'right' | 'between' | 'around' | 'evenly'>,
-    default: 'left'
+    type: String as PropType<'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'>,
+    default: 'start'
   }
 })
 
@@ -33,25 +33,25 @@ const props = defineProps({
   @apply flex;
 }
 
-.i-flex-row-vertical-middle {
+.i-flex-row-vertical-center {
   @apply items-center;
 }
-.i-flex-row-vertical-top {
+.i-flex-row-vertical-start {
   @apply items-start;
 }
-.i-flex-row-vertical-bottom {
+.i-flex-row-vertical-end {
   @apply items-end;
 }
 
-.i-flex-row-horizontal-left {
+.i-flex-row-horizontal-start {
   @apply justify-start;
 }
 
 .i-flex-row-horizontal-center {
-  @apply justify-start;
+  @apply justify-center;
 }
 
-.i-flex-row-horizontal-right {
+.i-flex-row-horizontal-end {
   @apply justify-end;
 }
 .i-flex-row-horizontal-between {

@@ -13,7 +13,7 @@
     "build:type": "vue-tsc --declaration --emitDeclarationOnly --declarationDir ./dist/typings",
     "build": "vue-tsc --noEmit --skipLibCheck && vite build",
     "dev": "start-storybook -p 6006",
-    "build:book": "build-storybook"
+    "build:book": "build-storybook -o ./docs"
   },
   "dependencies": {
     "@coloration/kit": "^1.6.2",

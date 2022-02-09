@@ -41,7 +41,7 @@ import { IParagraphText, ITitle, IFlexRow, IAvatar, IButton, IInput, ILabel, ISw
       Excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.
     </IParagraphText>
 
-    <IFlexRow vertical="top" class="gap-2">
+    <IFlexRow vertical="start" class="gap-2">
       <div class="w-64">
         <IInput id="emial" />
       </div>
@@ -54,7 +54,7 @@ import { IParagraphText, ITitle, IFlexRow, IAvatar, IButton, IInput, ILabel, ISw
       You can set a permanent password if you don't want to use temporary login codes.
     </IParagraphText>
 
-    <IFlexRow vertical="top" class="gap-2 mb-6">
+    <IFlexRow vertical="start" class="gap-2 mb-6">
       
       <IButton>Set New Password</IButton>
     </IFlexRow>
@@ -66,14 +66,13 @@ import { IParagraphText, ITitle, IFlexRow, IAvatar, IButton, IInput, ILabel, ISw
     </IParagraphText>
 
     <IFlexRow class="gap-2 mb-6">
-      
       <ISwitch>Set New Password</ISwitch>
     </IFlexRow>
   </div>
 
   <ILine />
 
-  <IFlexRow horizontal="right" class="gap-3 px-6 py-5">
+  <IFlexRow horizontal="end" class="gap-3 px-6 py-5">
     <IButton color="gray">Cancel</IButton>
     <IButton type="primary">Save Changes</IButton>
   </IFlexRow>

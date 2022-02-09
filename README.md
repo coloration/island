@@ -1,5 +1,10 @@
 # @coloration/island
 
+vue ui components library
+
+- [x] vue3
+- [] vue2
+
 ## Startup
 
 ``` bash
@@ -15,3 +20,10 @@ import { IButton } from '@coloration/island'
   <i-button>Greeting</i-button>
 <template>
 ```
+
+- [Document](https://coloration.github.io/island)
+
+
+## LICENSE
+
+MIT.

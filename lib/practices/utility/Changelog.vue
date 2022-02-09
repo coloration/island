@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { IPage } from '../../widgets'
-import { IPlusButton, ILine, IRoundTab, ITitle, IAvatar, IBadge, IFlexRow, IHangText, IPagination } from '../../components'
+import { IPlusButton, ILine, IRoundTab, ITitle, IAvatar, IBadge, IFlexRow, IHangText, IPagination, IParagraphText } from '../../components'
 
 const tabOptions = [
   { name: 'View All', value: 1, },
@@ -30,13 +30,13 @@ const tabOptions = [
       <IBadge color="green">Product</IBadge>
     </IFlexRow>
 
-    <p>
+    <IParagraphText class="mb-3">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    </p>
+    </IParagraphText>
 
-    <p>
+    <IParagraphText class="mb-3">
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
-    </p>
+    </IParagraphText>
 
     <ILine class="my-6" />
 
@@ -49,11 +49,12 @@ const tabOptions = [
       <IBadge color="yellow">Announcement</IBadge>
     </IFlexRow>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </p>
-    <p>
+    <IParagraphText class="mb-3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    
+    </IParagraphText>
+    <IParagraphText>
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
-    </p>
+    </IParagraphText>
 
     <ILine class="my-6" />
 
@@ -66,18 +67,20 @@ const tabOptions = [
       <IBadge color="red">Bug Fix</IBadge>
     </IFlexRow>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </p>
-    <p>
+    <IParagraphText class="mb-3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </IParagraphText>
+    <IParagraphText class="mb-3">
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
-    </p>
+    </IParagraphText>
 
-    <ul>
-      <li>E-commerce: Better lorem ipsum generator.</li>
-      <li>Booking: Lorem ipsum post generator.</li>
-      <li>Retail: Better lorem ipsum generator.</li>
-      <li>Services: Better lorem ipsum generator.</li>
-    </ul>
+    <IParagraphText>
+      <ul class="list-disc pl-4 space-y-1">
+        <li>E-commerce: Better lorem ipsum generator.</li>
+        <li>Booking: Lorem ipsum post generator.</li>
+        <li>Retail: Better lorem ipsum generator.</li>
+        <li>Services: Better lorem ipsum generator.</li>
+      </ul>
+    </IParagraphText>
 
     <ILine class="my-6" />
 
@@ -90,11 +93,11 @@ const tabOptions = [
       <IBadge color="light-blue">Exciting News</IBadge>
     </IFlexRow>
 
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </p>
-    <p>
+    <IParagraphText class="mb-3">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.    </IParagraphText>
+    <IParagraphText>
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.
-    </p>
+    </IParagraphText>
 
     <ILine class="my-6" />
 

@@ -1,13 +1,13 @@
 <script lang="ts" setup>
 import { PropType } from 'vue-demi'
 const props = defineProps({
-  vertical: {
-    type: String as PropType<'top' | 'middle' | 'bottom'>,
-    default: 'middle'
-  },
   horizontal: {
-    type: String as PropType<'left' | 'center' | 'right' | 'between' | 'around' | 'evenly'>,
-    default: 'left'
+    type: String as PropType<'start' | 'center' | 'end'>,
+    default: 'center'
+  },
+  vertical: {
+    type: String as PropType<'start' | 'center' | 'end' | 'between' | 'around' | 'evenly'>,
+    default: 'start'
   }
 })
 
@@ -33,26 +33,25 @@ const props = defineProps({
   @apply flex flex-col;
 }
 
-.i-flex-column-horizontal-middle {
+.i-flex-column-horizontal-center {
   @apply items-center;
 }
-.i-flex-column-horizontal-top {
+.i-flex-column-horizontal-start {
   @apply items-start;
 }
-.i-flex-column-horizontal-bottom {
+.i-flex-column-horizontal-end {
   @apply items-end;
 }
 
-.i-flex-column-vertical-left {
+.i-flex-column-vertical-start {
   @apply justify-start;
 }
 
 .i-flex-column-vertical-center {
-  @apply justify-start;
+  @apply justify-center;
 }
-
-.i-flex-column-vertical-right {
-  @apply justify-start;
+.i-flex-column-vertical-end {
+  @apply justify-end;
 }
 .i-flex-column-vertical-between {
   @apply justify-between;

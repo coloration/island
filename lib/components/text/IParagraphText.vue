@@ -5,7 +5,7 @@ import IText from './IText.vue'
 defineProps({
   size: {
     type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
-    default: 'sm'
+    default: 'md'
   },
   bold: {
     type: Boolean,

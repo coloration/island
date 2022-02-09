@@ -31,7 +31,7 @@ import { IParagraphText, ITitle, IFlexRow, IHorizontalStep, IButton, IInput, IIt
 
   <ILine />
 
-  <IFlexRow horizontal="right" class="gap-3 px-6 py-5">
+  <IFlexRow horizontal="end" class="gap-3 px-6 py-5">
     <IButton color="gray">Cancel</IButton>
     <IButton type="primary">Save Changes</IButton>
 

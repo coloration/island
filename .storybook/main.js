@@ -1,4 +1,3 @@
-const path = require('path')
 const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 const IconsPlugin = require('unplugin-icons/webpack')
 module.exports = {
@@ -21,6 +20,7 @@ module.exports = {
       include: /node_modules/,
       type: "javascript/auto"
     });
+
     return config
   },
 }

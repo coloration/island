@@ -48,7 +48,7 @@ const cardSrc = `data:image/svg+xml,${encodeURI(`<svg xmlns='http://www.w3.org/2
         <ILine />
         <div class="p-6">
           <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
-          <IFlexColumn class="gap-2" horizontal="left">
+          <IFlexColumn class="gap-2" horizontal="start">
             <IParagraphText>
               <IconCheck class="text-green-500 inline-block" />
               Lorem ipsum dolor sit amet
@@ -98,7 +98,7 @@ const cardSrc = `data:image/svg+xml,${encodeURI(`<svg xmlns='http://www.w3.org/2
         <ILine />
         <div class="p-6">
           <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
-          <IFlexColumn class="gap-2" horizontal="left">
+          <IFlexColumn class="gap-2" horizontal="start">
             <IParagraphText>
               <IconCheck class="text-green-500 inline-block" />
               Lorem ipsum dolor sit amet
@@ -149,7 +149,7 @@ const cardSrc = `data:image/svg+xml,${encodeURI(`<svg xmlns='http://www.w3.org/2
         <ILine />
         <div class="p-6">
           <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
-          <IFlexColumn class="gap-2" horizontal="left">
+          <IFlexColumn class="gap-2" horizontal="start">
             <IParagraphText>
               <IconCheck class="text-green-500 inline-block" />
               Lorem ipsum dolor sit amet
@@ -200,7 +200,7 @@ const cardSrc = `data:image/svg+xml,${encodeURI(`<svg xmlns='http://www.w3.org/2
       </IParagraphText>
     </div>
     <ILine />
-    <IFlexRow horizontal="right" class="gap-3 px-6 py-5">
+    <IFlexRow horizontal="end" class="gap-3 px-6 py-5">
       <IButton color="gray">Cancel</IButton>
       <IButton type="primary">Save Changes</IButton>
     </IFlexRow>
