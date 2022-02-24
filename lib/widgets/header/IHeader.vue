@@ -10,7 +10,8 @@ defineProps({
 
 </script>
 <template>
-<div class="i-demo" v-bind="$attrs">
+<div class="i-header" v-bind="$attrs">
+hi~
   <slot />
 </div>
 </template>

@@ -26,161 +26,169 @@ const cardSrc = `data:image/svg+xml,${encodeURI(`<svg xmlns='http://www.w3.org/2
         <span class="text-green-500 text-sm">(-20%)</span>
       </IFlexRow>
 
-      <ICard class="mb-6">
-        <div class="h-0.5 bg-green-500"></div>
-        <div class="p-5">
-          <IFlexRow class="gap-3 mb-2">
-            <IAvatar :src="cardSrc"/>
-            <ITitle level="4">Basic</ITitle>
-          </IFlexRow>
-          <IParagraphText
-            size="sm"
-            class="mb-3"
-          >Ideal for individuals that need a custom solution with custom tools.</IParagraphText>
+      <div class="gap-6 md:flex">
+        <div class="w-full md:w-1/3 mb-6">
+          <ICard>
+            <div class="h-0.5 bg-green-500"></div>
+            <div class="p-5">
+              <IFlexRow class="gap-3 mb-2">
+                <IAvatar :src="cardSrc"/>
+                <ITitle level="4">Basic</ITitle>
+              </IFlexRow>
+              <IParagraphText
+                size="sm"
+                class="mb-3"
+              >Ideal for individuals that need a custom solution with custom tools.</IParagraphText>
 
-          <div class="mb-5">
-            <span class="text-2xl font-bold">$</span>
-            <span class="text-3xl font-bold">14</span>
-            <IParagraphText>/mo</IParagraphText>
-          </div>
-          <IButton color="gray" block>Downgrade</IButton>
-        </div>
-        <ILine />
-        <div class="p-6">
-          <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
-          <IFlexColumn class="gap-2" horizontal="start">
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            
-          
-          </IFlexColumn>
+              <div class="mb-5">
+                <span class="text-2xl font-bold">$</span>
+                <span class="text-3xl font-bold">14</span>
+                <IParagraphText>/mo</IParagraphText>
+              </div>
+              <IButton color="gray" block>Downgrade</IButton>
+            </div>
+            <ILine />
+            <div class="p-6">
+              <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
+              <IFlexColumn class="gap-2" horizontal="start">
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                
+              
+              </IFlexColumn>
 
-        </div>
+            </div>
 
-      </ICard>
-
-      <ICard class="mb-6">
-        <div class="h-0.5 bg-light-blue-500"></div>
-        <div class="p-5">
-          <IFlexRow class="gap-3 mb-2">
-            <IAvatar :src="cardSrc"/>
-            <ITitle level="4">Standard</ITitle>
-          </IFlexRow>
-          <IParagraphText
-            size="sm"
-            class="mb-3"
-          >Ideal for individuals that need a custom solution with custom tools.</IParagraphText>
-
-          <div class="mb-5">
-            <span class="text-2xl font-bold">$</span>
-            <span class="text-3xl font-bold">34</span>
-            <IParagraphText>/mo</IParagraphText>
-          </div>
-          <IButton color="gray" disabled block>
-            <IconCheck />
-            Current Plan
-          </IButton>
-        </div>
-        <ILine />
-        <div class="p-6">
-          <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
-          <IFlexColumn class="gap-2" horizontal="start">
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            
-          
-          </IFlexColumn>
-
+          </ICard>
         </div>
 
-      </ICard>
+        <div class="w-full md:w-1/3 mb-6">
+          <ICard class="mb-6">
+            <div class="h-0.5 bg-light-blue-500"></div>
+            <div class="p-5">
+              <IFlexRow class="gap-3 mb-2">
+                <IAvatar :src="cardSrc"/>
+                <ITitle level="4">Standard</ITitle>
+              </IFlexRow>
+              <IParagraphText
+                size="sm"
+                class="mb-3"
+              >Ideal for individuals that need a custom solution with custom tools.</IParagraphText>
 
-      <ICard class="mb-6">
-        <div class="h-0.5 bg-indigo-500"></div>
-        <div class="p-5">
-          <IFlexRow class="gap-3 mb-2">
-            <IAvatar :src="cardSrc"/>
-            <ITitle level="4">Plus</ITitle>
-          </IFlexRow>
-          <IParagraphText
-            size="sm"
-            class="mb-3"
-          >Ideal for individuals that need a custom solution with custom tools.</IParagraphText>
+              <div class="mb-5">
+                <span class="text-2xl font-bold">$</span>
+                <span class="text-3xl font-bold">34</span>
+                <IParagraphText>/mo</IParagraphText>
+              </div>
+              <IButton color="gray" disabled block>
+                <IconCheck />
+                Current Plan
+              </IButton>
+            </div>
+            <ILine />
+            <div class="p-6">
+              <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
+              <IFlexColumn class="gap-2" horizontal="start">
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                
+              
+              </IFlexColumn>
 
-          <div class="mb-5">
-            <span class="text-2xl font-bold">$</span>
-            <span class="text-3xl font-bold">74</span>
-            <IParagraphText>/mo</IParagraphText>
-          </div>
-          <IButton type="primary" block>Downgrade</IButton>
+            </div>
+
+          </ICard>
         </div>
-        <ILine />
-        <div class="p-6">
-          <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
-          <IFlexColumn class="gap-2" horizontal="start">
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Lorem ipsum dolor sit amet
-            </IParagraphText>
-            <IParagraphText>
-              <IconCheck class="text-green-500 inline-block" />
-              Quis nostrud exercitation
-            </IParagraphText>
-            
-          
-          </IFlexColumn>
 
+        <div class="w-full md:w-1/3 mb-6">
+          <ICard class="mb-6">
+            <div class="h-0.5 bg-indigo-500"></div>
+            <div class="p-5">
+              <IFlexRow class="gap-3 mb-2">
+                <IAvatar :src="cardSrc"/>
+                <ITitle level="4">Plus</ITitle>
+              </IFlexRow>
+              <IParagraphText
+                size="sm"
+                class="mb-3"
+              >Ideal for individuals that need a custom solution with custom tools.</IParagraphText>
+
+              <div class="mb-5">
+                <span class="text-2xl font-bold">$</span>
+                <span class="text-3xl font-bold">74</span>
+                <IParagraphText>/mo</IParagraphText>
+              </div>
+              <IButton type="primary" block>Downgrade</IButton>
+            </div>
+            <ILine />
+            <div class="p-6">
+              <IHangText class="mb-4">WHAT'S INCLUDED</IHangText>
+              <IFlexColumn class="gap-2" horizontal="start">
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Lorem ipsum dolor sit amet
+                </IParagraphText>
+                <IParagraphText>
+                  <IconCheck class="text-green-500 inline-block" />
+                  Quis nostrud exercitation
+                </IParagraphText>
+                
+              
+              </IFlexColumn>
+
+            </div>
+
+          </ICard>
         </div>
-
-      </ICard>
+      </div>
 
       <ITitle level="3" class="mt-5 mb-4">FAQs</ITitle>
       <ITitle level="5" class="mt-5 mb-2">What is the difference between the three versions?</ITitle>

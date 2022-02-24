@@ -18,7 +18,7 @@ import { IParagraphText, ITitle, IFlexRow, IAvatar, IButton, IInput, ILabel, ISw
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.
     </IParagraphText>
 
-    <IFlexRow class="gap-4 mb-2">
+    <div class="sm:flex gap-4 mb-2">
       <div>
         <ILabel for="bussinessName">Business Name</ILabel>
         <IInput id="bussinessName" />
@@ -33,7 +33,7 @@ import { IParagraphText, ITitle, IFlexRow, IAvatar, IButton, IInput, ILabel, ISw
         <ILabel for="location">Location</ILabel>
         <IInput id="location" />
       </div>
-    </IFlexRow>
+    </div>
 
     <ITitle level="3" class="mb-1">Email</ITitle>
 
