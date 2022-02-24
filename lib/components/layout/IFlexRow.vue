@@ -2,7 +2,7 @@
 import { PropType } from 'vue-demi'
 const props = defineProps({
   vertical: {
-    type: String as PropType<'start' | 'center' | 'end'>,
+    type: String as PropType<'start' | 'center' | 'end' | 'stretch'>,
     default: 'center'
   },
   horizontal: {
@@ -41,6 +41,10 @@ const props = defineProps({
 }
 .i-flex-row-vertical-end {
   @apply items-end;
+}
+
+.i-flex-row-vertical-stretch {
+  @apply items-stretch;
 }
 
 .i-flex-row-horizontal-start {

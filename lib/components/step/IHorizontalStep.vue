@@ -10,6 +10,10 @@ defineProps({
   },
   step: {
     type: [Number, String]
+  },
+  size: {
+    type: String as PropType<string>,
+    default: 'md'
   }
 })
 
@@ -35,7 +39,7 @@ defineProps({
 <style>
 
 .i-h-step {
-  @apply relative inline-block h-5;
+  @apply relative inline-block h-5 select-none;
 }
 
 .i-h-step:last-of-type {

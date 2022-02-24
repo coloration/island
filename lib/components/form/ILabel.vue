@@ -52,6 +52,6 @@ const props = defineProps({
 }
 
 .i-label-required {
-  @apply text-red-500;
+  @apply text-red-500 ml-1;
 }
 </style>

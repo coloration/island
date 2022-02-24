@@ -33,7 +33,7 @@ defineProps({
 }
 
 .i-checkbox-label {
-
+  @apply flex items-center;
 }
 
 .i-checkbox-inner {

@@ -27,6 +27,9 @@ const props = defineProps({
   },
   id: {
     type: String
+  },
+  type: {
+    type: String
   }
 })
 
@@ -41,6 +44,7 @@ const props = defineProps({
       <input
         v-bind="$attrs"
         :id="id"
+        :type="type"
         class="i-input-inner"
         :disabled="disabled"
         :class="[
