@@ -2,7 +2,9 @@
 
 
 import { PropType } from 'vue-demi'
-
+const emits = defineEmits<{
+  (e: 'update:modelValue', v: any): void
+}>()
 const props = defineProps({
   suggest: {
     type: String as PropType<string>,
@@ -30,8 +32,15 @@ const props = defineProps({
   },
   type: {
     type: String
+  },
+  modelValue: {
+    type: [String, Number]
   }
 })
+
+function handleModelValueChange (e: any) {
+  emits('update:modelValue', e.target.value)
+}
 
 
 </script>
@@ -47,6 +56,8 @@ const props = defineProps({
         :type="type"
         class="i-input-inner"
         :disabled="disabled"
+        :value="modelValue"
+        @input="handleModelValueChange"
         :class="[
           suffix ? 'i-input-inner-suf' : '',
           prefix ? 'i-input-inner-pre' : '',
