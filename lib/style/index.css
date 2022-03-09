@@ -10,7 +10,8 @@
 }
 
 body {
-  @apply antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -24,7 +25,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .no-scrollbar {
   -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -moz-scrollbar-width: none;  /* Firefox */
 }
 
 ::-webkit-scrollbar{
