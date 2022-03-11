@@ -1,36 +1,50 @@
 <script lang="ts" setup>
-import { PropType, ref } from 'vue-demi'
+import { PropType, ref, watch } from 'vue-demi'
 import { useEventListener } from '@vueuse/core'
 import { OnClickOutside, } from '@vueuse/components'
 import { IDirectionIcon } from '../../components'
 import { IPlainOption } from '../../type'
+import { isBoolean } from '@coloration/kit'
 
-const emits = defineEmits(['change'])
+const emits = defineEmits<{
+  (e: 'change', option: IPlainOption) : void,
+  (e: 'update:visible', visible: boolean) : void
+}>()
 
 const props = defineProps({
   options: {
     type: Array as PropType<IPlainOption[]>,
     default: 'primary'
   },
+  visible: {
+    type: Boolean as PropType<boolean>,
+    default: false
+  }
 })
 
-const dropdownOpen = ref(false)
+const _visible = ref(props.visible)
 const trigger = ref<HTMLButtonElement | null>(null)
 const dropdown = ref<Element | null>(null)    
 const selected = ref(0)
 
-   
+watch(() => props.visible, () => {
+  if (isBoolean(props.visible) && props.visible !== _visible.value) _visible.value = props.visible
+})
 
+function handleToggle (next?: any) {
+  _visible.value = isBoolean(next) ? next : !_visible.value
+  emits('update:visible', _visible.value)
+}
 
-    // close if the esc key is pressed
+// close if the esc key is pressed
 useEventListener(document, 'keydown', ({ key }: KeyboardEvent) => {
-  if (!dropdownOpen.value || key !== 'Escape') return
-  dropdownOpen.value = false
+  if (!_visible.value || key !== 'Escape') return
+  handleToggle(false)
 })
 
 function handleChange (option: IPlainOption, idx: number) {
   selected.value = idx
-  dropdownOpen.value = false
+  handleToggle(false)
   emits('change', option)
 }
 
@@ -39,23 +53,24 @@ function handleChange (option: IPlainOption, idx: number) {
 <template>
 <OnClickOutside 
   class="relative inline-flex" 
-  @trigger="dropdownOpen = false">
-  <slot>
-    <button
-      ref="trigger"
-      class="font-medium px-3 py-2 text-sm inline-flex items-center justify-center border rounded leading-5 shadow-sm transition duration-150 ease-in-out justify-between min-w-44 bg-white border-gray-200 hover:border-gray-300 text-gray-500 hover:text-gray-600"
-      aria-label="Select date range"
-      aria-haspopup="true"
-      @click.prevent="dropdownOpen = !dropdownOpen"
-      :aria-expanded="dropdownOpen"
-    >
-      <span class="flex items-center">
-        <span>{{options[selected] && options[selected].name}}</span>
-      </span>
+  @trigger="handleToggle(false)">
+  
+  <div ref="trigger" @click.prevent="handleToggle(true)">
+    <slot>
+      <button
+        class="font-medium px-3 py-2 text-sm inline-flex items-center justify-center border rounded leading-5 shadow-sm transition duration-150 ease-in-out justify-between min-w-44 bg-white border-gray-200 hover:border-gray-300 text-gray-500 hover:text-gray-600"
+        aria-label="Select date range"
+        aria-haspopup="true"
+        :aria-expanded="visible"
+      >
+        <span class="flex items-center">
+          <span>{{options[selected] && options[selected].name}}</span>
+        </span>
 
-      <IDirectionIcon class="text-xs text-gray-400"/>
-    </button>
-  </slot>
+        <IDirectionIcon class="text-xs text-gray-400"/>
+      </button>
+    </slot>
+  </div>
   <transition
     enter-active-class="transition ease-out duration-100 transform"
     enter-from-class="opacity-0 -translate-y-2"
@@ -64,13 +79,15 @@ function handleChange (option: IPlainOption, idx: number) {
     leave-from-class="opacity-100"
     leave-to-class="opacity-0"
   >
-    <div v-show="dropdownOpen" class="z-10 absolute top-full left-0 w-full bg-white border border-gray-200 py-1.5 rounded shadow-lg overflow-hidden mt-1">
+    <div 
+      v-show="_visible" 
+      class="z-10 absolute top-full left-0 min-w-full bg-white border border-gray-200 py-1.5 rounded shadow-lg overflow-hidden mt-1">
       <slot name="drop-content">
         <div
           ref="dropdown"
           class="font-medium text-sm text-gray-600"
-          @focusin="dropdownOpen = true"
-          @focusout="dropdownOpen = false"
+          @focusin="handleToggle(true)"
+          @focusout="handleToggle(false)"
         >
           <button
             v-for="(option, i) in options"

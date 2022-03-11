@@ -116,7 +116,7 @@ function handleModelValueChange (e: any) {
 }
 
 .i-input-md {
-  @apply py-2 px-3;
+  @apply px-3 py-2;
 }
 
 .i-input-lg {

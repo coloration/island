@@ -78,7 +78,6 @@ function handleAction () {
   @apply fixed inline-flex flex-col max-w-lg px-4 py-2 rounded-sm text-sm bg-white shadow-lg border border-gray-200 text-gray-600 min-w-60;
 }
 
-.
 .i-notification-left-top {
   @apply left-2 top-2;
 }

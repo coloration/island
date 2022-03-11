@@ -18,6 +18,7 @@ import IUsergroupIcon from './IUsergroupIcon.vue'
 
 import IDirectionIcon from './IDirectionIcon.vue'
 import IArrowIcon from './IArrowIcon.vue'
+import ICloseIcon from './ICloseIcon.vue'
 
 export { 
   IIcon,
@@ -39,4 +40,5 @@ export {
 
   IArrowIcon,
   IDirectionIcon,
+  ICloseIcon,
 }
