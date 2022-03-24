@@ -1,25 +1,47 @@
-<script lang="ts" setup>
-import { PropType } from 'vue-demi'
-defineProps({
-  type: {
-    type: String as PropType<'info' | 'warning' | 'success' | 'error'>,
-    default: 'info'
+<script lang="ts">
+import { PropType, watch, defineComponent, ref } from 'vue-demi'
+import { isBoolean } from '@coloration/kit'
+export default defineComponent({
+  emits: ['close', 'update:visible'],
+  props: {
+    type: {
+      type: String as PropType<'info' | 'warning' | 'success' | 'error'>,
+      default: 'info'
+    },
+    closable: {
+      type: Boolean,
+      default: true,
+    },
+    visible: {
+      type: Boolean as PropType<boolean>,
+      default: false
+    }
   },
-  visible: {
-    type: Boolean as PropType<boolean>,
-    default: false
-  },
+  setup (props, { emit }) {
 
-  closable: {
-    type: Boolean as PropType<boolean>,
-    default: true
+    const _visible = ref(props.visible)
+    function handleClose (_: any) {
+      
+      _visible.value = false
+      emit('update:visible', _visible.value)
+      emit('close')
+      
+    }
+    
+    watch(() => props.visible, () => {
+      if (isBoolean(props.visible) && props.visible !== _visible.value) _visible.value = props.visible
+    })
+
+    return {
+      _visible,
+      handleClose
+    }
   }
 })
 
-
 </script>
 <template>
-<div class="i-light-banner" v-bind="$attrs" v-show="visible">
+<div class="i-light-banner" v-bind="$attrs" v-show="_visible">
   <div class="px-4 py-2 rounded-sm text-sm border" :class="['i-light-banner-' + type]">
     <div class="flex w-full justify-between items-start">
       <div class="flex">
@@ -39,7 +61,7 @@ defineProps({
           <slot />
         </div>
       </div>
-      <button v-if="closable" class="opacity-70 hover:opacity-80 ml-3 mt-[3px]" @click="visible = false">
+      <button v-if="closable" class="opacity-70 hover:opacity-80 ml-3 mt-[3px]" @click="handleClose">
         <div class="sr-only">Close</div>
         <svg class="w-4 h-4 fill-current">
           <path d="M7.95 6.536l4.242-4.243a1 1 0 111.415 1.414L9.364 7.95l4.243 4.242a1 1 0 11-1.415 1.415L7.95 9.364l-4.243 4.243a1 1 0 01-1.414-1.415L6.536 7.95 2.293 3.707a1 1 0 011.414-1.414L7.95 6.536z" />

@@ -6,12 +6,16 @@ export default {
     level: {
       type: [Number, String],
       default: 1
+    },
+    truncate: {
+      type: Boolean,
+      default: false
     }
   },
   render() {
     return h(
       'h' + this.level, // 标签名
-      { class: 'i-title ' }, // prop 或 attribute
+      { class: `i-title ${this.truncate ? 'i-title-truncate' : ''}` }, // prop 或 attribute
       this.$slots.default ? this.$slots.default() : undefined // 包含其子节点的数组
     )
   }
@@ -22,6 +26,10 @@ export default {
 
 .i-title {
   @apply font-bold text-gray-800;
+}
+
+.i-title-truncate {
+  @apply truncate;
 }
 
 h1.i-title {

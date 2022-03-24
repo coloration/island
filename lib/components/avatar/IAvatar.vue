@@ -1,21 +1,24 @@
-<script lang="ts" setup>
-import { PropType } from 'vue-demi'
-defineProps({
-  size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
-    default: 'md'
-  },
-  border: {
-    type: Boolean,
-  },
-  notice: {
-    type: Boolean,
-  },
-  src: {
-    type: String
-  },
-  name: {
-    type: String
+<script lang="ts">
+import { PropType, defineComponent } from 'vue-demi'
+
+export default defineComponent({
+  props: {
+    size: {
+      type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
+      default: 'md'
+    },
+    border: {
+      type: Boolean,
+    },
+    notice: {
+      type: Boolean,
+    },
+    src: {
+      type: String
+    },
+    name: {
+      type: String
+    }
   }
 })
 

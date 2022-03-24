@@ -1,71 +1,79 @@
 
-<script>
-import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
-import { useRouter } from 'vue-router'
+<script lang="ts" setup>
+import { ref, watch, PropType } from 'vue'
 import SidebarLinkGroup from './SidebarLinkGroup.vue'
 import { IFlexRow, IDirectionIcon, IArrowIcon } from '../../components'
+import { useEventListener } from '@vueuse/core'
 
-export default {
-  name: 'Sidebar',
-  props: ['sidebarOpen', 'options'],
-  components: {
-    SidebarLinkGroup, IFlexRow, IDirectionIcon, IArrowIcon
-  },  
-  setup(props, { emit }) {
 
-   
-    const trigger = ref(null)
-    const sidebar = ref(null)
 
-    const storedSidebarExpanded = localStorage.getItem('sidebar-expanded')
-    const sidebarExpanded = ref(storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true')
 
-    const currentRoute = useRouter().currentRoute.value
-
-    // close on click outside
-    const clickHandler = ({ target }) => {
-      if (!sidebar.value || !trigger.value) return
-      if (
-        !props.sidebarOpen ||
-        sidebar.value.contains(target) ||
-        trigger.value.contains(target)
-      ) return
-      emit('close-sidebar')
-    }
-
-    // close if the esc key is pressed
-    const keyHandler = ({ keyCode }) => {
-      if (!props.sidebarOpen || keyCode !== 27) return
-      emit('close-sidebar')
-    } 
-
-    onMounted(() => {
-      document.addEventListener('click', clickHandler)
-      document.addEventListener('keydown', keyHandler)
-    })
-
-    onUnmounted(() => {
-      document.removeEventListener('click', clickHandler)
-      document.removeEventListener('keydown', keyHandler)
-    })
-
-    watch(sidebarExpanded, () => {
-      localStorage.setItem('sidebar-expanded', sidebarExpanded.value)
-      if (sidebarExpanded.value) {
-        document.querySelector('body').classList.add('sidebar-expanded')
-      } else {
-        document.querySelector('body').classList.remove('sidebar-expanded')
-      }
-    })
-
-    return {
-      trigger,
-      sidebar,
-      sidebarExpanded,
-      currentRoute,
-    }
+const props = defineProps({
+  sidebarOpen: {
+    type: Boolean,
+    default: false,
   },
+  options: {
+    type: Array as PropType<any[]>,
+    default: []
+  },
+  active: {
+    type: String as PropType<string>,
+    default: ''
+  },
+
+})
+
+const emit = defineEmits<{
+  (e: 'close-sidebar'): void,
+  (e: 'change', opt: any, parent: any): void
+}>()
+
+const trigger = ref<HTMLElement | null>(null)
+const sidebar = ref<HTMLElement | null>(null)
+
+const storedSidebarExpanded = localStorage.getItem('sidebar-expanded')
+const sidebarExpanded = ref(storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true')
+
+// close on click outside
+const clickHandler = ({ target }: Event) => {
+  if (!sidebar.value || !trigger.value) return
+  if (
+    !props.sidebarOpen ||
+    sidebar.value.contains(target as HTMLElement) ||
+    trigger.value.contains(target as HTMLElement)
+  ) return
+  emit('close-sidebar')
 }
+
+// close if the esc key is pressed
+const keyHandler = ({ keyCode }: KeyboardEvent) => {
+  if (!props.sidebarOpen || keyCode !== 27) return
+  emit('close-sidebar')
+} 
+
+useEventListener(document, 'click', clickHandler)
+useEventListener(document, 'keydown', keyHandler)
+
+
+
+watch(sidebarExpanded, () => {
+  localStorage.setItem('sidebar-expanded', `${sidebarExpanded.value}`)
+  if (sidebarExpanded.value) {
+    document.querySelector('body')?.classList.add('sidebar-expanded')
+  } else {
+    document.querySelector('body')?.classList.remove('sidebar-expanded')
+  }
+})
+
+function includesActive (opts: any[]) {
+  return opts.some(opt => opt.value === props.active)
+}
+
+function handleChange (opt: any, parent: any) {
+  emit('change', opt, parent)
+}
+
 </script>
 <template>
   <div 
@@ -131,11 +139,11 @@ export default {
               <SidebarLinkGroup 
                 v-if="Array.isArray(optChild.value)"
                 v-slot="parentLink" 
-                :activeCondition="currentRoute.fullPath.includes(optChild.name)">
+                :activeCondition="includesActive(optChild.value)">
                 <a 
                   class="i-sidebar-nav-link" 
                   :class="parentLink.expanded && 'hover:text-gray-200'" 
-                  href="#0" 
+                  href="javascript:;"
                   @click.prevent="sidebarExpanded ? parentLink.handleClick() : sidebarExpanded = true"
                 >
                   <IFlexRow horizontal="between">
@@ -144,35 +152,46 @@ export default {
                       <span class="i-sidebar-nav-name">{{ optChild.name }}</span>
                     </IFlexRow>
                     <div class="flex shrink-0 ml-2">
-                      <IDirectionIcon class="text-xs text-gray-400" :direction="parentLink.expanded ? 'up' : 'down'" />
-                      <!-- <svg class="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400" :class="parentLink.expanded && 'transform rotate-180'" viewBox="0 0 12 12">
-                        <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
-                      </svg> -->
+                      <IDirectionIcon 
+                        class="text-xs text-gray-400" 
+                        :direction="parentLink.expanded ? 'up' : 'down'" />
                     </div>
                   </IFlexRow>
                 </a>
                 <ul class="i-sidebar-subnav-container" v-if="parentLink.expanded">
-                  <router-link v-for="(child, cIdx) in optChild.value" :key="cIdx" :to="child.value" custom v-slot="{ href, navigate }">
-                    <li class="mb-1 last:mb-0">
-                      <a class="i-sidebar-nav-link" :href="href" @click="navigate">
-                        <span class="i-sidebar-subnav-name">{{ child.name }}</span>
-                      </a>
-                    </li>
-                  </router-link>
+                  <li class="mb-1 last:mb-0" v-for="(child, cIdx) in optChild.value" :key="cIdx">
+                    <a 
+                      class="i-sidebar-nav-link" 
+                      :class="active === child.value && 'active'"
+                      href="javascript:;" 
+                      @click="handleChange(child, optChild)">
+                      <span class="i-sidebar-subnav-name">{{ child.name }}</span>
+                    </a>
+                  </li>
                 </ul>
+                
               </SidebarLinkGroup>
-              <router-link v-else :to="optChild.value" custom v-slot="{ href, navigate, isExactActive }">
-                <li class="px-3 py-2 rounded-sm mb-0.5 last:mb-0" :class="isExactActive && 'bg-gray-900'">
-                  <a class="i-sidebar-nav-link" :class="isExactActive && 'hover:text-gray-200'" :href="href" @click="navigate">
-                    <IFlexRow horizontal="between">
-                      <IFlexRow>
-                        <component :is="optChild.icon" :active="isExactActive"></component>
-                        <span class="i-sidebar-nav-name">{{ optChild.name }}</span>
-                      </IFlexRow>
+              <li 
+                v-else 
+                class="px-3 py-2 rounded-sm mb-0.5 last:mb-0" 
+                :class="active === optChild.value && 'bg-gray-900'">
+                <a 
+                  class="i-sidebar-nav-link" 
+                  :class="active === optChild.value && 'hover:text-gray-200'" 
+                  href="javascript:;" 
+                  @click="handleChange(optChild, optChild)">
+                  <IFlexRow horizontal="between">
+                    <IFlexRow>
+                      <component 
+                        :is="optChild.icon" 
+                        :active="active === optChild.value" />
+                      <span class="i-sidebar-nav-name">
+                        {{ optChild.name }}
+                      </span>
                     </IFlexRow>
-                  </a>
-                </li>
-              </router-link>
+                  </IFlexRow>
+                </a>
+              </li>
 
             </template>
           </ul>
@@ -290,5 +309,9 @@ export default {
 
 .i-sidebar-subnav-container .i-sidebar-nav-link {
   @apply block text-gray-400 hover:text-gray-200;
+}
+
+.i-sidebar-subnav-container .i-sidebar-nav-link.active {
+  @apply block text-gray-200 hover:text-gray-200;
 }
 </style>

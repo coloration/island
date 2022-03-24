@@ -27,7 +27,7 @@ function handleClick (opt: ITabOption, idx: number) {
 </script>
 <template>
 <div class="mb-8 border-b border-gray-200">
-  <ul class="text-sm font-medium flex flex-nowrap overflow-x-auto gap-6">
+  <ul class="text-base font-medium flex flex-nowrap overflow-x-auto gap-6">
     <li 
       v-for="(opt, i) in options" 
       class="pb-3"

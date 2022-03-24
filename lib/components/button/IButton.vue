@@ -1,33 +1,35 @@
-<script lang="ts" setup>
-import { PropType } from 'vue-demi'
-defineProps({
-  type: {
-    type: String as PropType<'primary' | 'normal' | 'ghost'>,
-    default: 'normal'
-  },
-  size: {
-    type: String as PropType<'lg' | 'xs' | 'sm' | 'md'>,
-    default: 'md'
-  },
-  block: {
-    type: Boolean as PropType<boolean>,
-    default: false
-  },
-  disabled: {
-    type: Boolean as PropType<boolean>,
-    default: false
-  },
-  loading: {
-    type: Boolean as PropType<boolean>,
-    default: false
-  },
-  color: {
-    type: String as PropType<'gray' | 'indigo' | 'red' | 'green'>,
-    default: 'indigo'
-  },
+<script lang="ts">
+import { PropType, defineComponent } from 'vue-demi'
+
+export default defineComponent({
+  
+  props: {
+    type: {
+      type: String as PropType<'primary' | 'normal' | 'ghost'>,
+      default: 'normal'
+    },
+    size: {
+      type: String as PropType<'lg' | 'xs' | 'sm' | 'md'>,
+      default: 'md'
+    },
+    block: {
+      type: Boolean as PropType<boolean>,
+      default: false
+    },
+    disabled: {
+      type: Boolean as PropType<boolean>,
+      default: false
+    },
+    loading: {
+      type: Boolean as PropType<boolean>,
+      default: false
+    },
+    color: {
+      type: String as PropType<'gray' | 'indigo' | 'red' | 'green'>,
+      default: 'indigo'
+    },
+  }
 })
-
-
 </script>
 <template>
 <button 

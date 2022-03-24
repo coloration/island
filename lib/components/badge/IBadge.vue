@@ -1,16 +1,19 @@
-<script lang="ts" setup>
-import { PropType } from 'vue-demi'
-defineProps({
-  type: {
-    type: String as PropType<'light' | 'dark'>,
-    default: 'light'
-  },
-  size: {
-    type: String as PropType<'md' | 'lg'>,
-    default: 'md'
-  },
-  color: {
-    type: String,
+<script lang="ts">
+import { PropType, defineComponent } from 'vue-demi'
+
+export default defineComponent({
+  props: {
+    type: {
+      type: String as PropType<'light' | 'dark'>,
+      default: 'light'
+    },
+    size: {
+      type: String as PropType<'md' | 'lg'>,
+      default: 'md'
+    },
+    color: {
+      type: String,
+    }
   }
 })
 

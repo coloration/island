@@ -1,6 +1,6 @@
 {
   "name": "@coloration/island",
-  "version": "0.0.1-alpha.4",
+  "version": "0.0.1-alpha.5",
   "files": [
     "dist"
   ],
@@ -19,11 +19,10 @@
   "dependencies": {
     "@coloration/kit": "^1.6.2",
     "@storybook/theming": "^6.4.18",
-    "@vueuse/components": "^7.5.3",
-    "@vueuse/core": "^7.5.3",
+    "@vueuse/components": "^8.1.2",
+    "@vueuse/core": "^8.1.2",
     "storybook-vue3-router": "^2.2.1",
-    "vue-demi": "latest",
-    "vue-router": "^4.0.12"
+    "vue-demi": "latest"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.0.0-rc.1",
@@ -39,6 +38,7 @@
     "@babel/core": "^7.15.0",
     "@iconify/json": "^1.1.460",
     "@storybook/addon-actions": "^6.3.7",
+    "@storybook/addon-docs": "^6.4.19",
     "@storybook/addon-essentials": "^6.3.7",
     "@storybook/addon-links": "^6.3.7",
     "@storybook/vue3": "^6.3.7",
