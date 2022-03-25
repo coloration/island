@@ -37,7 +37,7 @@ defineProps({
 }
 
 .i-radio-inner {
-  @apply focus:ring-0 text-sm text-gray-800 bg-white 
+  @apply focus:ring-0 text-sm text-gray-800 bg-white outline-none outline-transparent
   text-indigo-500 border border-gray-300 disabled:bg-gray-50 disabled:cursor-not-allowed;
 }
 

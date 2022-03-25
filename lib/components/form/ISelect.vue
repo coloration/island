@@ -14,6 +14,10 @@ defineProps({
     type: String as PropType<'sm' | 'md' | 'lg'>,
     default: 'md'
   },
+  color: {
+    type: String as PropType<'red' | 'green' | 'gray'>,
+    default: 'gray'
+  },
   id: {
     type: String
   },
@@ -30,7 +34,7 @@ function handleModelValueChange (e: any) {
 
 </script>
 <template>
-<div class="i-select">
+<div class="i-select" :class="['i-select-' + color,]">
   <select 
     v-bind="$attrs" 
     :id="id" 
@@ -52,13 +56,24 @@ function handleModelValueChange (e: any) {
 <style>
 
 .i-select {
-  @apply ;
+  @apply w-full relative;
 }
 
 .i-select-inner {
-  @apply w-full focus:ring-0 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm
-  text-sm text-gray-800 bg-white border rounded outline-transparent
-    leading-5 ;
+  @apply w-full 
+  focus:ring-0 
+  border-gray-200 
+  hover:border-gray-300 
+  focus:border-indigo-300 
+  shadow-sm
+  text-sm 
+  text-gray-800 
+  bg-white 
+  border 
+  rounded 
+  outline-transparent
+  outline-none
+  leading-5;
 }
 
 .i-select-sm {
@@ -75,6 +90,10 @@ function handleModelValueChange (e: any) {
 
 .i-select-suggest {
   @apply text-xs mt-1 h-4;
+}
+
+.i-select-red .i-select-inner {
+  @apply border-red-300;
 }
 
 .i-select-red .i-select-suggest {

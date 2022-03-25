@@ -83,10 +83,18 @@ function handleModelValueChange (e: any) {
   @apply flex relative;
 }
 .i-input-inner {
-  @apply focus:ring-0 w-full text-sm text-gray-800 bg-white border rounded 
-  leading-5 border-gray-200 
-  hover:border-gray-300 focus:border-indigo-300 shadow-sm
-  placeholder-gray-400 outline-transparent;
+  @apply w-full 
+  focus:ring-0 
+  border-gray-200 
+  hover:border-gray-300 
+  focus:border-indigo-300 
+  shadow-sm
+  text-sm 
+  text-gray-800 
+  bg-white 
+  border rounded outline-transparent
+  outline-none
+  leading-5;
 }
 
 

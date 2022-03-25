@@ -1,6 +1,6 @@
 import 'windi.css'
-import '../lib/style/index.css'
-import { create } from '@storybook/theming';
+import '../lib/style'
+import { create } from '@storybook/theming'
 
 const theme = create({
   base: 'light',

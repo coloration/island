@@ -1,5 +1,5 @@
 import 'virtual:windi.css'
-import './style/index.css'
+import './style'
 export * from './components'
 export * from './widgets'
 
