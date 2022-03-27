@@ -61,6 +61,7 @@ function handleModelValueChange (e: any) {
 
 .i-select-inner {
   @apply w-full 
+  appearance-none
   focus:ring-0 
   border-gray-200 
   hover:border-gray-300 

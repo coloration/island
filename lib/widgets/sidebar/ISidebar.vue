@@ -238,6 +238,10 @@ function handleChange (opt: any, parent: any) {
     transition-all ease-in-out -translate-x-64;
 }
 
+.i-sidebar-inner::-webkit-scrollbar-track{
+  @apply bg-gray-800;
+}
+
 .i-sidebar-open .i-sidebar-inner {
   @apply translate-x-0;
 }

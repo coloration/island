@@ -16,3 +16,5 @@ export * from './title'
 export * from './tooltip'
 export * from './step'
 export * from './modal'
+
+export * from './toggle'
