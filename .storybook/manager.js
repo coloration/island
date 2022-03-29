@@ -1,24 +1,26 @@
-import { addons } from '@storybook/addons';
+import { addons } from '@storybook/addons'
+import { theme } from './theme'
 
 addons.setConfig({
   // isFullscreen: false,
   // showNav: true,
-  // showPanel: true,
-  // panelPosition: 'bottom',
+  showPanel: true,
+  panelPosition: 'bottom',
   // enableShortcuts: true,
   // isToolshown: true,
-  // theme: undefined,
+  theme,
   // selectedPanel: undefined,
   // initialActive: 'sidebar',
   // sidebar: {
   //   showRoots: false,
   //   collapsedRoots: ['other'],
   // },
-  // toolbar: {
+  toolbar: {
   //   title: { hidden: false, },
   //   zoom: { hidden: false, },
   //   eject: { hidden: false, },
   //   copy: { hidden: false, },
   //   fullscreen: { hidden: false, },
-  // },
+    'storybook/background': { hidden: true }
+  },
 });

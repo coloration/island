@@ -1,5 +1,8 @@
 const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 const IconsPlugin = require('unplugin-icons/webpack')
+
+// docs: https://storybook.js.org/docs/vue/configure/overview
+
 module.exports = {
   "stories": [
     "../lib/**/*.stories.mdx",
@@ -10,7 +13,15 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
   ],
-  
+
+  // features: { 
+  //   storyStoreV7: true 
+  // },
+  core:{ 
+    builder: 'webpack5'
+  },
+  // 引用其他 Storybook
+  refs: {},
   webpackFinal: (config) => {
     config.plugins.push(new WindiCSSWebpackPlugin())
     config.plugins.push(IconsPlugin())

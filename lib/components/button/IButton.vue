@@ -1,8 +1,7 @@
-<script lang="ts">
+<script lang="ts" name="i-button">
 import { PropType, defineComponent } from 'vue-demi'
 
 export default defineComponent({
-  
   props: {
     type: {
       type: String as PropType<'primary' | 'normal' | 'ghost'>,
@@ -58,7 +57,7 @@ export default defineComponent({
 
 .i-btn {
   @apply 
-    font-medium text-sm
+    font-medium text-sm appearance-none
     rounded transition duration-150 ease-in-out shadow-sm
     border border-transparent;
 }
@@ -75,8 +74,16 @@ export default defineComponent({
   @apply text-white;
 }
 
+.dark .i-btn-primary .i-btn-content {
+  @apply text-gray-800;
+}
+
 .i-btn-normal {
   @apply border-gray-200 hover:border-gray-300;
+}
+
+.dark .i-btn-normal {
+  @apply border-gray-400 hover:border-gray-300;
 }
 
 .i-btn-normal .i-btn-content {
@@ -95,8 +102,25 @@ export default defineComponent({
   @apply border-gray-200 bg-gray-100  cursor-not-allowed shadow-none;
 }
 
-.i-btn-loading .i-btn-content, .i-btn-loading:hover .i-btn-content,
-.i-btn-disabled .i-btn-content, .i-btn-disabled:hover .i-btn-content {
+.i-btn-loading .i-btn-content, 
+.i-btn-loading:hover .i-btn-content,
+.i-btn-disabled .i-btn-content, 
+.i-btn-disabled:hover .i-btn-content {
+  @apply text-gray-400;
+}
+
+
+.dark .i-btn-loading, 
+.dark .i-btn-loading:hover,
+.dark .i-btn-disabled, 
+.dark .i-btn-disabled:hover {
+  @apply border-gray-200 bg-gray-700;
+}
+
+.dark .i-btn-loading .i-btn-content, 
+.dark .i-btn-loading:hover .i-btn-content,
+.dark .i-btn-disabled .i-btn-content, 
+.dark .i-btn-disabled:hover .i-btn-content {
   @apply text-gray-400;
 }
 
@@ -106,17 +130,35 @@ export default defineComponent({
   @apply text-red-500 hover:text-red-600; 
 }
 
+.dark .i-btn-red {
+  @apply text-red-700 hover:text-red-600; 
+}
+
 .i-btn-indigo {
   @apply text-indigo-500 hover:text-indigo-600;
 }
+
+.dark .i-btn-indigo {
+  @apply text-indigo-500 hover:text-indigo-400;
+}
+
 
 .i-btn-green {
   @apply text-green-500 hover:text-green-600;
 }
 
+.dark .i-btn-green {
+  @apply text-green-600 hover:text-green-500;
+}
+
 .i-btn-gray {
   @apply text-gray-600 hover:text-gray-700;
 }
+
+.dark .i-btn-gray {
+  @apply text-gray-400 hover:text-gray-300;
+}
+
 
 
 .i-btn-block {

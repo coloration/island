@@ -2,7 +2,7 @@
 import { PropType } from 'vue-demi'
 defineProps({
   size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
+    type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
     default: 'md'
   },
   align: {
@@ -20,6 +20,14 @@ defineProps({
   block: {
     type: Boolean,
     default: false
+  },
+  uppercase: {
+    type: Boolean,
+    default: false
+  },
+  color: {
+    type: String as PropType<'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue'>,
+    default: 'gray'
   }
 })
 
@@ -33,8 +41,10 @@ defineProps({
     italic ? 'i-text-italic' : '',
     truncate ? 'i-text-truncate' : '',
     block ? 'i-text-block' : '',
+    uppercase ? 'i-text-uppercase' : '',
     'i-text-' + size,
     'i-text-' + align,
+    'i-text-' + color,
   ]"
   >
   <slot />
@@ -43,7 +53,11 @@ defineProps({
 <style>
 
 .i-text {
-  @apply inline-block;
+  @apply inline-block text-gray-900;
+}
+
+.dark .i-text {
+  @apply text-gray-100;
 }
 
 .i-text.i-text-block {
@@ -64,6 +78,10 @@ defineProps({
   @apply truncate;
 }
 
+.i-text-uppercase {
+  @apply uppercase;
+}
+
 .i-text-xs {
   @apply text-xs;
 }
@@ -79,5 +97,33 @@ defineProps({
 .i-text-xl {
   @apply text-xl;
 }
+.i-text-xxl {
+  @apply text-2xl;
+}
+
+.i-text-green {
+  @apply text-green-600;
+}
+
+.i-text-indigo {
+  @apply text-indigo-600;
+}
+
+.i-text-light-blue {
+  @apply text-light-blue-600;
+}
+
+.i-text-yellow {
+  @apply text-yellow-600;
+}
+
+.i-text-red {
+  @apply text-red-600;
+}
+
+.i-text-blue {
+  @apply text-blue-600;
+}
+
 
 </style>

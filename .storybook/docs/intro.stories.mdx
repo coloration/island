@@ -16,6 +16,14 @@ $ npm install @coloration/island
 
 ## Usage
 
+> main.ts
+
+``` ts
+import '@coloration/island/dist/style.css'
+```
+
+> compnent.vue
+
 ``` html
 <script lang="ts" setup>
 import { IButton } from '@coloration/island'
@@ -33,41 +41,37 @@ import { IButton } from '@coloration/island'
 ### Vue Version
 
 - [x] vue3
-- [ ] vue2
 
+### Feature
+
+- [ ] dark theme 
+- [ ] divided style
 
 ### Components
 
-- [x] IAvatar
-- [x] IBadge
-- [x] IBanner
-  - [x] ILightBanner
-- [x] IBreadcrumb
-- [x] IButton
-- [x] IDropdown
-- [x] ICheckbox
-- [x] IRadio
-- [x] ISelect
-- [x] ISwitch
-- [x] IInput
-- icons
-  - action icons
-  - direct icons
-    - [x] IArrowIcon
-    - [x] IDirectionIcon
-- [x] ILayout
-- [x] ILine
-- [ ] IMenu
-- [x] INotification
-- [x] IPagination
-- [x] IVerticalStep
-- [x] ITab
-- [x] IText
-  - [x] IButtonText
-  - [x] IParagraphText
-- [x] ITitle
+
+|Component|Feature|Dark Theme|Divided Style|Next Feature|
+|:---|:---:|:---:|:---:|:---|
+|`IAvatar`| ✔️ | ✔️ | ❌ ||
+|`IAvatarGroup`| ✔️ | ➖ | ❌ |plusVisible|
+|`IBadge`| ✔️ | ➖ | ❌ |
+|`IBanner`| ✔️ | ➖ | ❌ |
+|`IBradecrumb`| ✔️ | ❌ | ❌ |
+|`IButton`| ✔️ | ✔️ | ❌ |
+|`IArrowLeftButton`| ✔️ | ✔️ | ❌ |
+|`IArrowRightButton`| ✔️ | ✔️ | ❌ |
+|`IPlusButton`| ✔️ | ✔️ | ❌ |
+|`IButtonGroup`| ❌ | ❌ | ❌ |
+|`IDropdown`| ❌ | ❌ | ❌ |
+|`IText`| ✔️ | ✔️ | ❌ |
+
 
 ### Widgets
+
+|Widget|Feature|Dark Theme|Divided Style|Next Feature|
+|:---|:---:|:---:|:---:|:---|
+|`-`| ✔️ | ✔️ | ❌ |
+
 
 
 ### Practices

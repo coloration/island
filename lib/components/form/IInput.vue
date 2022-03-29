@@ -91,9 +91,10 @@ function handleModelValueChange (e: any) {
   shadow-sm
   text-sm 
   text-gray-800 
-  bg-white 
+  bg-transparent 
   border rounded outline-transparent
   outline-none
+  appearance-none
   leading-5;
 }
 

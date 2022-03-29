@@ -1,7 +1,8 @@
 <script>
-import { h } from 'vue-demi'
+import { h, defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
+  name: 'i-title',
   props: {
     level: {
       type: [Number, String],
@@ -19,7 +20,7 @@ export default {
       this.$slots.default ? this.$slots.default() : undefined // 包含其子节点的数组
     )
   }
-}
+})
 
 </script>
 <style>
