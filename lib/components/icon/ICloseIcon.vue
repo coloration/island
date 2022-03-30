@@ -1,12 +1,4 @@
 <script lang="ts" setup>
-import { PropType, defineProps } from 'vue-demi'
-
-const props = defineProps({
-  direction: {
-    type: String as PropType<'up' | 'down' | 'left' | 'right'>,
-    default: 'down'
-  },
-})
 </script>
 <template>
 <svg class="i-close-icon" v-bind="$attrs" width="1em" height="1em" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">

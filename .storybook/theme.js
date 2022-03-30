@@ -11,7 +11,7 @@ export const theme = create({
 
   // // UI
   appBg: '#1E293B',
-  appContentBg: '#e5e7eb',
+  appContentBg: '#1E293B',
   // appBorderColor: 'grey',
   appBorderRadius: 0,
 
@@ -29,10 +29,10 @@ export const theme = create({
   barBg: '#1f2937',
 
   // // Form colors
-  // inputBg: 'white',
+  // inputBg: '#e5e7eb',
   // inputBorder: 'silver',
-  // inputTextColor: 'black',
-  // inputBorderRadius: 4,
+  // inputTextColor: '#f3f4f6',
+  // inputBorderRadius: 0,
 })
 
 

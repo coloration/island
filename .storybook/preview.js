@@ -1,8 +1,8 @@
 import 'windi.css'
 import '../lib/style'
-import { useDark, useToggle } from '@vueuse/core'
+
+import { useDark } from '@vueuse/core'
 import { ref, onMounted } from 'vue'
-import { addDecorator } from '@storybook/vue3'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

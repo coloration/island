@@ -1,6 +1,5 @@
 <script lang="tsx" setup>
 import { PropType, defineProps, h, useSlots, useAttrs } from 'vue'
-import { IAvatar } from './IAvatar.vue'
 const props = defineProps({
   size: {
     type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
