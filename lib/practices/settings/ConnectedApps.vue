@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { IParagraphText, ITitle, IFlexRow, IItalicText, IButtonText, IAvatar, ILine, IButton, ITab } from '../../components'
+import { IParagraphText, ITitle, IFlexRow, IText, IButtonText, IAvatar, ILine, IButton, ITab } from '../../components'
 import { ICard } from '../../widgets'
 import IconCheck from '~icons/ant-design/check-outlined'
 import IconStar from '~icons/ant-design/star-filled'
@@ -59,7 +59,7 @@ const cardSrc = `data:image/svg+xml,${encodeURI(`<svg xmlns='http://www.w3.org/2
       <ICard class="p-5 mb-6" v-for="i in 3" :key="3">
         <ITitle level="4" class="mb-4">Programming</ITitle>
         <IFlexRow horizontal="between">
-          <IItalicText>400+ Apps</IItalicText>
+          <IText italic>400+ Apps</IText>
 
           <IButtonText>Explore -></IButtonText>
         </IFlexRow>

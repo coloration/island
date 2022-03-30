@@ -29,6 +29,10 @@ export default defineComponent({
   @apply font-bold text-gray-800;
 }
 
+.dark .i-title {
+  @apply text-gray-200;
+}
+
 .i-title-truncate {
   @apply truncate;
 }

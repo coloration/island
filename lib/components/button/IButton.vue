@@ -1,33 +1,31 @@
-<script lang="ts" name="i-button">
-import { PropType, defineComponent } from 'vue-demi'
+<script lang="ts" name="i-button" setup>
+import { PropType } from 'vue'
 
-export default defineComponent({
-  props: {
-    type: {
-      type: String as PropType<'primary' | 'normal' | 'ghost'>,
-      default: 'normal'
-    },
-    size: {
-      type: String as PropType<'lg' | 'xs' | 'sm' | 'md'>,
-      default: 'md'
-    },
-    block: {
-      type: Boolean as PropType<boolean>,
-      default: false
-    },
-    disabled: {
-      type: Boolean as PropType<boolean>,
-      default: false
-    },
-    loading: {
-      type: Boolean as PropType<boolean>,
-      default: false
-    },
-    color: {
-      type: String as PropType<'gray' | 'indigo' | 'red' | 'green'>,
-      default: 'indigo'
-    },
-  }
+defineProps({
+  type: {
+    type: String as PropType<'primary' | 'normal' | 'ghost'>,
+    default: 'normal'
+  },
+  size: {
+    type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
+    default: 'md'
+  },
+  block: {
+    type: Boolean as PropType<boolean>,
+    default: false
+  },
+  disabled: {
+    type: Boolean as PropType<boolean>,
+    default: false
+  },
+  loading: {
+    type: Boolean as PropType<boolean>,
+    default: false
+  },
+  color: {
+    type: String as PropType<'gray' | 'indigo' | 'red' | 'green'>,
+    default: 'indigo'
+  },
 })
 </script>
 <template>
@@ -59,7 +57,8 @@ export default defineComponent({
   @apply 
     font-medium text-sm appearance-none
     rounded transition duration-150 ease-in-out shadow-sm
-    border border-transparent;
+    border border-white
+    z-0 hover:z-10;
 }
 
 .i-btn-content svg {
@@ -67,7 +66,7 @@ export default defineComponent({
 }
 
 .i-btn-primary {
-  @apply bg-current;
+  @apply bg-current  border-opacity-50;
 }
 
 .i-btn-primary .i-btn-content {

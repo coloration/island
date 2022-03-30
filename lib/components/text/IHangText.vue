@@ -1,30 +1,28 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { PropType, ExtractPropTypes } from 'vue'
 import IText from './IText.vue'
+import { ITextProps } from './type'
 
-defineProps({
-  size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
-    default: 'xs'
-  },
-  italic: {
+const props: Readonly<ExtractPropTypes<ITextProps>> = defineProps({
+  uppercase: {
     type: Boolean,
-    default: false
+    default: true
   },
-  align: {
-    type: String as PropType<'left' | 'center' | 'right'>,
-  },
+  size: {
+    type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
+    default: 'xs'
+  }
 })
+
 
 
 </script>
 <template>
 <IText 
   class="i-hang-text" 
-  :size="size"
-  :italic="italic"
-  :align="align"
   v-bind="$attrs"
+  :size="size"
+  :uppercase="uppercase"
   >
   <slot />
 </IText>
@@ -32,7 +30,11 @@ defineProps({
 <style>
 
 .i-hang-text {
-  @apply font-semibold uppercase text-gray-400 xl:leading-8;
+  @apply font-semibold text-gray-400 xl:leading-8;
+}
+
+.dark .i-hang-text {
+  @apply text-gray-500;
 }
 
 </style>

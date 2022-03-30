@@ -1,4 +1,4 @@
-<script lang="tsx" setup>
+<script lang="tsx" setup name="i-avatar-group">
 import { PropType, defineProps, h, useSlots, useAttrs } from 'vue'
 const props = defineProps({
   size: {

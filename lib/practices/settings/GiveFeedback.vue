@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { IParagraphText, ITitle, IFlexRow, IHorizontalStep, IButton, IInput, IItalicText, ITextarea, ILine } from '../../components'
+import { IParagraphText, ITitle, IFlexRow, IHorizontalStep, IButton, IInput, IText, ITextarea, ILine } from '../../components'
 </script>
 <template>
 <div>
@@ -19,8 +19,8 @@ import { IParagraphText, ITitle, IFlexRow, IHorizontalStep, IButton, IInput, IIt
       <IHorizontalStep />
     </div>
     <IFlexRow horizontal="between" class="mb-6">
-      <IItalicText>Not at all</IItalicText>
-      <IItalicText>Extremely likely</IItalicText>
+      <IText italic>Not at all</IText>
+      <IText italic>Extremely likely</IText>
     </IFlexRow>
 
     <ITitle level="3" class="mb-5">Tell us in words</ITitle>

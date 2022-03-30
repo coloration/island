@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText } from '../../components'
+import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IText } from '../../components'
 </script>
 <template>
 <div>
@@ -62,7 +62,7 @@ import { IParagraphText, ITitle, IFlexRow, IButton, ISwitch, ILine, IItalicText 
         <IParagraphText size="sm">Excepteur sint occaecat cupidatat non in culpa qui officia deserunt mollit.</IParagraphText>
       </div>
 
-      <IItalicText>Active</IItalicText>
+      <IText italic>Active</IText>
       <IButton size="sm" color="red">Disable</IButton>
     </IFlexRow>
   </div>

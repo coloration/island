@@ -1,19 +1,17 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { PropType, ExtractPropTypes } from 'vue'
 import IText from './IText.vue'
+import { ITextProps } from './type'
 
-defineProps({
-  size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
-    default: 'sm'
+const props: Readonly<ExtractPropTypes<ITextProps & { hoverUndeline: boolean }>> = defineProps({
+  color: {
+    type: String as PropType<'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue'>,
+    default: 'indigo'
   },
-  italic: {
+  hoverUndeline: {
     type: Boolean,
     default: false
-  },
-  align: {
-    type: String as PropType<'left' | 'center' | 'right'>,
-  },
+  }
 })
 
 
@@ -21,9 +19,10 @@ defineProps({
 <template>
 <IText 
   class="i-button-text" 
-  :size="size"
-  :italic="italic"
-  :align="align"
+  :class="[
+    props.hoverUndeline ? 'i-button-text-hover-underline' : ''
+  ]"
+  :color="color"
   v-bind="$attrs"
   >
   <slot />
@@ -32,7 +31,11 @@ defineProps({
 <style>
 
 .i-button-text {
-  @apply font-medium text-indigo-500 hover:text-indigo-600 cursor-pointer;
+  @apply font-medium cursor-pointer;
+}
+
+.i-button-text-hover-underline:hover {
+  @apply underline;
 }
 
 </style>

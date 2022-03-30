@@ -1,11 +1,6 @@
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup name="i-arrow-left-button">
 import IconArrowLeft from '~icons/carbon/arrow-left'
 import IButton from './IButton.vue'
-
-export default defineComponent({
-  components: { IconArrowLeft, IButton }
-})
 </script>
 <template>
 <IButton v-bind="$attrs">

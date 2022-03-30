@@ -1,47 +1,64 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { computed, ExtractPropTypes, PropType } from 'vue'
+import { textPropsDefaults, ITextProps } from './type'
 import IText from './IText.vue'
 
-defineProps({
-  size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg'>,
-    default: 'md'
-  },
-  bold: {
+const props: Readonly<ExtractPropTypes<ITextProps & { clamp: number, top: number, bottom: number }>> = defineProps({
+  block: {
     type: Boolean,
-    default: false
+    default: true
   },
-  italic: {
-    type: Boolean,
-    default: false
+  clamp: {
+    type: Number,
+    default: 0
   },
-  align: {
-    type: String as PropType<'left' | 'center' | 'right'>,
+  top: {
+    type: Number,
+    default: 0
   },
+  bottom: {
+    type: Number,
+    default: 0
+  }
+
+})
+
+
+const style = computed(() => {
+  const sty: any = {}
+  if (props.clamp) {
+    sty.WebkitLineClamp = props.clamp
+    sty.LineClamp = props.clamp
+  }
+
+  props.bottom && (sty.paddingBottom = props.bottom + 'rem')
+  props.top && (sty.paddingTop = props.top + 'rem')
+
+  return sty
 })
 
 
 </script>
 <template>
 <IText 
+  v-bind="$attrs" 
+  :block="block"
   class="i-paragraph-text" 
-  :size="size"
-  v-bind="$attrs"
-  :italic="italic"
-  :align="align"
-  :class="bold ? 'i-paragraph-text-bold' : ''"
-  >
+  :style="style"
+>
   <slot />
 </IText>
 </template>
 <style>
 
 .i-paragraph-text {
-  @apply text-gray-700;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-line-clamp: 0;
+  line-clamp: 0;
 }
 
-.i-paragraph-text-bold {
-  @apply text-gray-800 font-medium;
-}
 
 </style>

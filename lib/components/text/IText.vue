@@ -1,35 +1,8 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
-defineProps({
-  size: {
-    type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
-    default: 'md'
-  },
-  align: {
-    type: String as PropType<'left' | 'center' | 'right'>,
-    default: 'left'
-  },
-  italic: {
-    type: Boolean,
-    default: false
-  },
-  truncate: {
-    type: Boolean as PropType<boolean>,
-    default: false
-  },
-  block: {
-    type: Boolean,
-    default: false
-  },
-  uppercase: {
-    type: Boolean,
-    default: false
-  },
-  color: {
-    type: String as PropType<'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue'>,
-    default: 'gray'
-  }
-})
+import { ExtractPropTypes, PropType } from 'vue'
+import { textPropsDefaults, ITextProps } from './type'
+
+const props: Readonly<ExtractPropTypes<ITextProps>> = defineProps(textPropsDefaults())
 
 
 </script>
@@ -38,13 +11,14 @@ defineProps({
   class="i-text" 
   v-bind="$attrs"
   :class="[
-    italic ? 'i-text-italic' : '',
-    truncate ? 'i-text-truncate' : '',
-    block ? 'i-text-block' : '',
-    uppercase ? 'i-text-uppercase' : '',
-    'i-text-' + size,
-    'i-text-' + align,
-    'i-text-' + color,
+    props.italic ? 'i-text-italic' : '',
+    props.truncate ? 'i-text-truncate' : '',
+    props.block ? 'i-text-block' : '',
+    props.uppercase ? 'i-text-uppercase' : '',
+    props.underline ? 'i-text-underline' : '',
+    'i-text-' + props.size,
+    'i-text-' + props.align,
+    'i-text-' + props.color,
   ]"
   >
   <slot />
@@ -54,6 +28,10 @@ defineProps({
 
 .i-text {
   @apply inline-block text-gray-900;
+}
+
+.i-text-underline {
+  @apply underline;
 }
 
 .dark .i-text {
@@ -70,9 +48,15 @@ defineProps({
 .i-text-center {
   @apply text-center;
 }
+
 .i-text-right {
   @apply text-right;
 }
+
+.i-text-justify {
+  @apply text-justify;
+}
+
 
 .i-text-truncate {
   @apply truncate;
@@ -101,24 +85,48 @@ defineProps({
   @apply text-2xl;
 }
 
+.dark .i-text-green {
+  @apply text-green-400;
+}
+
 .i-text-green {
   @apply text-green-600;
 }
 
+
+.dark .i-text-indigo {
+  @apply text-indigo-400;
+}
 .i-text-indigo {
   @apply text-indigo-600;
+}
+
+.dark .i-text-light-blue {
+  @apply text-light-blue-400;
 }
 
 .i-text-light-blue {
   @apply text-light-blue-600;
 }
 
+.dark .i-text-yellow {
+  @apply text-yellow-400;
+}
+
 .i-text-yellow {
   @apply text-yellow-600;
 }
 
+.dark .i-text-red {
+  @apply text-red-400;
+}
+
 .i-text-red {
   @apply text-red-600;
+}
+
+.dark .i-text-blue {
+  @apply text-blue-400;
 }
 
 .i-text-blue {
