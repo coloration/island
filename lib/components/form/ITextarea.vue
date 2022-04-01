@@ -52,10 +52,21 @@ const props = defineProps({
   @apply flex relative;
 }
 .i-textarea-inner {
-  @apply focus:ring-0 w-full text-sm text-gray-800 bg-white border rounded 
-  leading-5 border-gray-200 
-  hover:border-gray-300 focus:border-indigo-300 shadow-sm
-  placeholder-gray-400 outline-transparent;
+  @apply 
+    focus:ring-0 
+    w-full 
+    text-sm 
+    text-gray-800 
+    bg-white 
+    border 
+    rounded 
+    leading-5 
+    border-gray-200 
+  hover:border-gray-300 
+  focus:border-indigo-300 
+    shadow-sm
+  placeholder-gray-400 
+    outline-transparent;
 }
 
 .i-textarea-suggest {

@@ -72,9 +72,19 @@ function handleModelValueChange (e: any) {
   bg-white 
   border 
   rounded 
+  bg-transparent 
   outline-transparent
   outline-none
   leading-5;
+}
+
+.dark .i-select-inner {
+  @apply 
+    bg-gray-800
+    text-gray-200
+    border-gray-500
+    hover:border-gray-400
+    focus:border-indigo-400;
 }
 
 .i-select-sm {
@@ -93,20 +103,52 @@ function handleModelValueChange (e: any) {
   @apply text-xs mt-1 h-4;
 }
 
+.i-select-disabled {
+  @apply border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed;
+}
+
+.dark .i-select-disabled {
+  @apply bg-gray-700 border-gray-500 hover:border-gray-500;
+}
+
 .i-select-red .i-select-inner {
-  @apply border-red-300;
+  @apply 
+  border-red-300 
+  hover:broder-red-500;
+}
+
+.dark .i-select-red .i-select-inner {
+  @apply 
+  border-red-500 
+  hover:border-red-400;
 }
 
 .i-select-red .i-select-suggest {
   @apply text-red-500;
 }
 
-.i-select-green .i-select-inner {
-  @apply border-green-300;
+.dark .i-select-red .i-select-suggest {
+  @apply text-red-600;
 }
+
+
+.i-select-green .i-select-inner {
+  @apply 
+    border-green-300
+    hover:border-green-500;
+}
+
+.dark .i-select-green .i-select-inner {
+  @apply 
+    border-green-500
+    hover:border-green-400;
+}
+
 
 .i-select-green .i-select-suggest {
   @apply text-green-500;
 }
-
+.dark .i-select-green .i-select-suggest {
+  @apply text-green-600;
+}
 </style>

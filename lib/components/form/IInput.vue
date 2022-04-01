@@ -85,17 +85,36 @@ function handleModelValueChange (e: any) {
 .i-input-inner {
   @apply w-full 
   focus:ring-0 
+  text-gray-800 
   border-gray-200 
   hover:border-gray-300 
   focus:border-indigo-300 
   shadow-sm
   text-sm 
-  text-gray-800 
   bg-transparent 
   border rounded outline-transparent
   outline-none
   appearance-none
   leading-5;
+}
+
+.i-input-inner:-webkit-autofill{
+  -webkit-text-fill-color: rgb(31, 41, 55) !important;
+}
+
+
+.dark .i-input-inner:-webkit-autofill{
+  -webkit-text-fill-color: rgb(229, 231, 235) !important;
+}
+
+
+.dark .i-input-inner {
+  @apply 
+    text-gray-200
+    border-gray-500
+    hover:border-gray-400
+    focus:border-indigo-400
+    ;
 }
 
 
@@ -118,6 +137,10 @@ function handleModelValueChange (e: any) {
 
 .i-input-suggest {
   @apply text-xs mt-1 h-4;
+}
+
+.dark .i-input-suggest {
+  @apply text-gray-400;
 }
 
 .i-input-sm {
@@ -161,19 +184,48 @@ function handleModelValueChange (e: any) {
   @apply border-gray-200 bg-gray-100 text-gray-400 cursor-not-allowed;
 }
 
+.dark .i-input-disabled {
+  @apply bg-gray-700 border-gray-500 hover:border-gray-500;
+}
+
 .i-input-red .i-input-inner {
-  @apply border-red-300;
+  @apply 
+  border-red-300 
+  hover:broder-red-500;
+}
+
+.dark .i-input-red .i-input-inner {
+  @apply 
+  border-red-500 
+  hover:border-red-400;
 }
 
 .i-input-red .i-input-suggest {
   @apply text-red-500;
 }
 
-.i-input-green .i-input-inner {
-  @apply border-green-300;
+.dark .i-input-red .i-input-suggest {
+  @apply text-red-600;
 }
+
+
+.i-input-green .i-input-inner {
+  @apply 
+    border-green-300
+    hover:border-green-500;
+}
+
+.dark .i-input-green .i-input-inner {
+  @apply 
+    border-green-500
+    hover:border-green-400;
+}
+
 
 .i-input-green .i-input-suggest {
   @apply text-green-500;
+}
+.dark .i-input-green .i-input-suggest {
+  @apply text-green-600;
 }
 </style>

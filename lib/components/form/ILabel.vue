@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-
+import { IText } from '../text'
 
 import { PropType } from 'vue-demi'
 import { ITooltip } from '../tooltip'
@@ -27,7 +27,9 @@ const props = defineProps({
   <span class="i-label-header">
     <span class="i-label-name">
       <label :for="props.for">
-        <slot />
+        <IText size="sm">
+          <slot />
+        </IText>
       </label>
       <span class="i-label-required" v-if="required">*</span>
     </span>
@@ -44,7 +46,7 @@ const props = defineProps({
 }
 
 .i-label-header {
-  @apply block text-sm font-medium mb-1 flex text-gray-600;
+  @apply block text-sm font-medium mb-1 flex;
 }
 
 .i-label-name {
