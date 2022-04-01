@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { PropType } from 'vue'
 import { ITitle, ILayout } from '../../components'
 defineProps({
   title: {

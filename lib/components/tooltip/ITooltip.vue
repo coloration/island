@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, ref } from 'vue-demi'
+import { PropType, ref } from 'vue'
 
 defineProps({
   position: {

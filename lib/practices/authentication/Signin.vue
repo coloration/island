@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ITitle, ILabel, IInput, IButton, ILine, ILightBanner, IButtonText, IText, IFlexRow } from '../../components'
+import { ITitle, ILabel, IInput, IButton, ILine, IBanner, IButtonText, IText, IFlexRow } from '../../components'
 import BussinessAuthContainer from './BussinessAuthContainer.vue'
 </script>
 <template>
@@ -36,9 +36,9 @@ import BussinessAuthContainer from './BussinessAuthContainer.vue'
       </IButtonText>
     </div>
 
-    <ILightBanner  class="mt-5" :visible="true" type="warning" :closable="false">
+    <IBanner  class="mt-5" :visible="true" color="yellow" :closable="false">
       To support you during the pandemic super pro features are free until March 31st.
-    </ILightBanner>
+    </IBanner>
   </div>
 </BussinessAuthContainer>
 </template>

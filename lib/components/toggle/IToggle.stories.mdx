@@ -1,0 +1,18 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="component/wrapper/IToggle" />
+
+# IToggle
+
+``` html
+<IToggle defaultValue v-slot={ toggle, value }>
+    
+  <h1>Title</h1>
+  <span @click="toggle">expand</span>
+
+  <div v-if="value">
+    content
+  </div>
+</IToggle>
+```
+

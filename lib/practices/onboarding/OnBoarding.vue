@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import { IButtonText, IText, IHorizontalStep, IFlexRow, IButton, ITitle, IParagraphText, ISwitch, ILabel, IInput, ISelect, IFlexColumn } from '../../components'
-import { ref } from 'vue-demi'
+import { IButtonText, IText, IStep, IFlexRow, IButton, ITitle, IParagraphText, ISwitch, ILabel, IInput, ISelect, IFlexColumn } from '../../components'
+import { ref } from 'vue'
 
 const step = ref(1)
 </script>
@@ -42,7 +42,7 @@ const step = ref(1)
             <div class="px-4 pt-12 pb-8">
               <div class="max-w-md mx-auto w-full">
                 <IFlexRow>
-                  <IHorizontalStep :step="n" v-for="n in 4" :checked="n <= step" @click="step = n" />
+                  <IStep :step="n" v-for="n in 4" :checked="n <= step" @click="step = n" :align-end="n === 4"/>
                 </IFlexRow>
               </div>
             </div>

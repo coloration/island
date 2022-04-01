@@ -7,7 +7,7 @@ const props: Readonly<ExtractPropTypes<ITextProps>> = defineProps(textPropsDefau
 
 </script>
 <template>
-<div 
+<span 
   class="i-text" 
   v-bind="$attrs"
   :class="[
@@ -16,26 +16,28 @@ const props: Readonly<ExtractPropTypes<ITextProps>> = defineProps(textPropsDefau
     props.block ? 'i-text-block' : '',
     props.uppercase ? 'i-text-uppercase' : '',
     props.underline ? 'i-text-underline' : '',
-    'i-text-' + props.size,
     'i-text-' + props.align,
-    'i-text-' + props.color,
+    props.size === 'current' ? '' : 'i-text-' + props.size,
+    props.color === 'current' ? '' : 'i-text-' + props.color,
   ]"
   >
   <slot />
-</div>
+</span>
 </template>
 <style>
 
+
 .i-text {
-  @apply inline-block text-gray-900;
+  font-size: 1em;
+  @apply inline text-current;
+}
+
+.dark .i-text {
+  @apply text-current;
 }
 
 .i-text-underline {
   @apply underline;
-}
-
-.dark .i-text {
-  @apply text-gray-100;
 }
 
 .i-text.i-text-block {
@@ -83,6 +85,18 @@ const props: Readonly<ExtractPropTypes<ITextProps>> = defineProps(textPropsDefau
 }
 .i-text-xxl {
   @apply text-2xl;
+}
+
+.i-text-xxl {
+  @apply text-2xl;
+}
+
+.dark .i-text-gray {
+  @apply text-gray-300;
+}
+
+.i-text-gray {
+  @apply text-gray-800;
 }
 
 .dark .i-text-green {

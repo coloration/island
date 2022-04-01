@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { IText } from '../text'
 
-import { PropType } from 'vue-demi'
+import { PropType } from 'vue'
 import { ITooltip } from '../tooltip'
 const props = defineProps({
   

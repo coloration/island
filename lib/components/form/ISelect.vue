@@ -1,5 +1,6 @@
-<script lang="ts" setup>
-import { PropType } from 'vue-demi'
+<script lang="ts" setup name="i-select">
+import { PropType } from 'vue'
+import IFromSuggest from './IFormSuggest.vue'
 
 const emits = defineEmits<{
   (e: 'update:modelValue', v: any): void
@@ -50,7 +51,7 @@ function handleModelValueChange (e: any) {
   >
     <slot></slot>
   </select>
-  <div class="i-select-suggest">{{ suggest }}</div>
+  <IFromSuggest :color="color">{{ suggest }}</IFromSuggest>
 </div>
 </template>
 <style>
@@ -87,6 +88,10 @@ function handleModelValueChange (e: any) {
     focus:border-indigo-400;
 }
 
+.i-select-xs {
+  @apply px-1 py-0.5;
+}
+
 .i-select-sm {
   @apply px-2 py-1;
 }
@@ -97,10 +102,6 @@ function handleModelValueChange (e: any) {
 
 .i-select-lg {
   @apply px-4 py-3;
-}
-
-.i-select-suggest {
-  @apply text-xs mt-1 h-4;
 }
 
 .i-select-disabled {
@@ -123,15 +124,6 @@ function handleModelValueChange (e: any) {
   hover:border-red-400;
 }
 
-.i-select-red .i-select-suggest {
-  @apply text-red-500;
-}
-
-.dark .i-select-red .i-select-suggest {
-  @apply text-red-600;
-}
-
-
 .i-select-green .i-select-inner {
   @apply 
     border-green-300
@@ -142,13 +134,5 @@ function handleModelValueChange (e: any) {
   @apply 
     border-green-500
     hover:border-green-400;
-}
-
-
-.i-select-green .i-select-suggest {
-  @apply text-green-500;
-}
-.dark .i-select-green .i-select-suggest {
-  @apply text-green-600;
 }
 </style>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { IPage } from '../../widgets'
-import { IPlusButton, ILine, ITitle, IFlexRow, IAvatar, IBadge, IVerticalStep, IParagraphText } from '../../components'
+import { IPlusButton, ILine, ITitle, IFlexRow, IAvatar, IBadge, IStep, IParagraphText } from '../../components'
 
 
 </script>
@@ -26,26 +26,33 @@ import { IPlusButton, ILine, ITitle, IFlexRow, IAvatar, IBadge, IVerticalStep, I
     </IFlexRow>
 
     <div class="pt-6">
-      <IVerticalStep title="Product V1 - Early Access" checked>
-        <IParagraphText>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Product V1 - Early Access</ITitle>
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Web3 Compatibility" checked>
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Web3 Compatibility</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Proof-of-Funds Compliance Key" checked>
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Proof-of-Funds Compliance Key</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Activity Feed Integration" checked>
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Activity Feed Integration</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
+      </IStep>
     </div>
     
     <ILine class="mt-3 mb-8" />
@@ -63,26 +70,33 @@ import { IPlusButton, ILine, ITitle, IFlexRow, IAvatar, IBadge, IVerticalStep, I
     </IFlexRow>
 
     <div class="pt-6">
-      <IVerticalStep title="Product V1 - Early Access" checked>
-        <IParagraphText>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Product V1 - Early Access</ITitle>
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Web3 Compatibility" checked>
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Web3 Compatibility</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Proof-of-Funds Compliance Key" checked>
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Proof-of-Funds Compliance Key</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Activity Feed Integration">
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Activity Feed Integration</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
+      </IStep>
     </div>
 
     <ILine class="mt-3 mb-8" />
@@ -100,21 +114,33 @@ import { IPlusButton, ILine, ITitle, IFlexRow, IAvatar, IBadge, IVerticalStep, I
     </IFlexRow>
 
     <div class="pt-6">
-      <IVerticalStep title="Product V1 - Early Access">
-        <IParagraphText>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Product V1 - Early Access</ITitle>
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Web3 Compatibility">
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Web3 Compatibility</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Activity Feed Integration">
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Proof-of-Funds Compliance Key</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Activity Feed Integration</ITitle>
+
+        <IParagraphText :top="1">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </IParagraphText>
+      </IStep>
     </div>
 
     <ILine class="mt-3 mb-8" />
@@ -132,16 +158,33 @@ import { IPlusButton, ILine, ITitle, IFlexRow, IAvatar, IBadge, IVerticalStep, I
     </IFlexRow>
 
     <div class="pt-6">
-      <IVerticalStep title="Product V1 - Early Access">
-        <IParagraphText>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Product V1 - Early Access</ITitle>
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
-      <IVerticalStep title="Activity Feed Integration">
-        <IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Web3 Compatibility</ITitle>
+
+        <IParagraphText :top="1">
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         </IParagraphText>
-      </IVerticalStep>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Proof-of-Funds Compliance Key</ITitle>
+
+        <IParagraphText :top="1">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </IParagraphText>
+      </IStep>
+      <IStep direction="vertical" checked>
+        <ITitle :level="3">Activity Feed Integration</ITitle>
+
+        <IParagraphText :top="1">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </IParagraphText>
+      </IStep>
     </div>
 
     <ILine class="mt-3 mb-8" />

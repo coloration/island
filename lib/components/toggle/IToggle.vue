@@ -13,5 +13,5 @@ const [value, toggle] = useToggle(props.defaultValue)
 
 </script>
 <template>
-  <slot :toggle="toggle" :value="value"></slot>
+<slot :toggle="toggle" :value="value"></slot>
 </template>

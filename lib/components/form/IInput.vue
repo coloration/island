@@ -1,7 +1,7 @@
-<script lang="ts" setup>
+<script lang="ts" setup name="">
+import IFromSuggest from './IFormSuggest.vue'
 
-
-import { PropType } from 'vue-demi'
+import { PropType } from 'vue'
 const emits = defineEmits<{
   (e: 'update:modelValue', v: any): void
 }>()
@@ -71,7 +71,7 @@ function handleModelValueChange (e: any) {
         <span class="i-input-fix-text">{{ suffix }}</span>
       </div>
     </div>
-    <div class="i-input-suggest">{{ suggest }}</div>
+    <IFromSuggest :color="color">{{ suggest }}</IFromSuggest>
   </div>
 </template>
 <style>
@@ -135,14 +135,6 @@ function handleModelValueChange (e: any) {
   @apply text-sm text-gray-400 font-medium px-3;
 }
 
-.i-input-suggest {
-  @apply text-xs mt-1 h-4;
-}
-
-.dark .i-input-suggest {
-  @apply text-gray-400;
-}
-
 .i-input-sm {
   @apply px-2 py-1;
 }
@@ -200,13 +192,6 @@ function handleModelValueChange (e: any) {
   hover:border-red-400;
 }
 
-.i-input-red .i-input-suggest {
-  @apply text-red-500;
-}
-
-.dark .i-input-red .i-input-suggest {
-  @apply text-red-600;
-}
 
 
 .i-input-green .i-input-inner {
@@ -222,10 +207,4 @@ function handleModelValueChange (e: any) {
 }
 
 
-.i-input-green .i-input-suggest {
-  @apply text-green-500;
-}
-.dark .i-input-green .i-input-suggest {
-  @apply text-green-600;
-}
 </style>

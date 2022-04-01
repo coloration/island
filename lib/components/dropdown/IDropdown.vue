@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, ref, watch } from 'vue-demi'
+import { PropType, ref, watch } from 'vue'
 import { useEventListener } from '@vueuse/core'
 import { OnClickOutside, } from '@vueuse/components'
 import { IDirectionIcon } from '../../components'

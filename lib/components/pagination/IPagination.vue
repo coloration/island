@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, computed } from 'vue-demi'
+import { PropType, computed } from 'vue'
 import { IButton } from '../button'
 const props = defineProps({
   type: {

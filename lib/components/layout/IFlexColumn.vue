@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { PropType } from 'vue'
 const props = defineProps({
   horizontal: {
     type: String as PropType<'start' | 'center' | 'end'>,

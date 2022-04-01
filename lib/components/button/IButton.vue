@@ -61,6 +61,10 @@ defineProps({
     z-0 hover:z-10;
 }
 
+.i-btn-content {
+  @apply whitespace-nowrap;
+}
+
 .i-btn-content svg {
   @apply inline-block align-text-bottom;
 }

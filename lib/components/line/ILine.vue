@@ -1,11 +1,8 @@
-<script lang="ts" setup>
-import { PropType } from 'vue-demi'
-defineProps({
-  type: {
-    type: String as PropType<'primary' | 'normal' | 'ghost'>,
-    default: 'primary'
-  },
-})
+<script lang="ts" setup name="i-line">
+// import { PropType } from 'vue'
+// defineProps({
+  
+// })
 
 
 </script>
@@ -18,6 +15,10 @@ defineProps({
 
 .i-line {
   @apply border-b border-gray-200;
+}
+
+.dark .i-line {
+  @apply border-gray-600;
 }
 
 </style>

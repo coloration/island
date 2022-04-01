@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { PropType } from 'vue'
 import IconAccessibility from '~icons/carbon/accessibility'
 import IconAccountBox from '~icons/mdi/account-box'
 

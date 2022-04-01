@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { IPage } from '../../widgets'
-import { IPlusButton, ILine, IRoundTab, ITitle, IAvatar, IBadge, IFlexRow, IHangText, IPagination, IParagraphText } from '../../components'
+import { IPlusButton, ILine, ITitle, IAvatar, IBadge, IFlexRow, IHangText, IPagination, IParagraphText } from '../../components'
 
 const tabOptions = [
   { name: 'View All', value: 1, },
@@ -17,9 +17,9 @@ const tabOptions = [
   <template v-slot:header-rest>
     <IPlusButton type="primary">Add Entry</IPlusButton>
   </template>
-  <ILine  />
+  <ILine />
   <div class="max-w-3xl m-auto mt-8">
-    <IRoundTab :options="tabOptions" />
+    <!-- <IRoundTab :options="tabOptions" /> -->
 
     <IHangText>8 JULY, 2021</IHangText>
     <ITitle :level="2">Released version 2.0</ITitle>

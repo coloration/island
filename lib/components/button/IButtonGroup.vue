@@ -1,5 +1,5 @@
 <script lang="ts" setup name="i-button-group">
-import { PropType, defineProps, h, useSlots, useAttrs } from 'vue'
+import { PropType, h, useSlots, useAttrs } from 'vue'
 
 const props = defineProps({
   size: {

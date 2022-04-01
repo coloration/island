@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType } from 'vue-demi'
+import { PropType } from 'vue'
 defineProps({
   type: {
     type: String as PropType<'vertical' | 'horizontal'>,

@@ -1,4 +1,3 @@
-import IVerticalStep from './IVerticalStep.vue'
-import IHorizontalStep from './IHorizontalStep.vue'
+import IStep from './IStep.vue'
 
-export { IVerticalStep, IHorizontalStep }
+export { IStep }

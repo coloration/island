@@ -1,5 +1,5 @@
 <script lang="tsx" setup name="i-avatar-group">
-import { PropType, defineProps, h, useSlots, useAttrs } from 'vue'
+import { PropType, h, useSlots, useAttrs } from 'vue'
 const props = defineProps({
   size: {
     type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,

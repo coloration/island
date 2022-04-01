@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { ref } from 'vue-demi'
+import { ref } from 'vue'
 
 export interface INotificationProps {
   type?: 'info' | 'warning' | 'success' | 'error',

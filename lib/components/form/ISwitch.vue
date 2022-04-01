@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, computed, ref, watch, onMounted } from 'vue-demi'
+import { PropType, computed, ref, watch, onMounted } from 'vue'
 import { isBoolean } from '@coloration/kit'
 
 const emits = defineEmits({

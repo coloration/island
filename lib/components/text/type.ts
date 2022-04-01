@@ -1,9 +1,9 @@
 import { PropType } from "vue";
 
 export interface ITextProps {
-  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl',
+  size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'current',
   align: 'left' | 'center' | 'right' | 'justify',
-  color: 'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue',
+  color: 'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue' | 'current',
   italic: boolean,
   truncate: boolean,
   block: boolean,
@@ -14,7 +14,7 @@ export interface ITextProps {
 export function textPropsDefaults(exProps?: any) {
   return Object.assign({
     size: {
-      type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'>,
+      type: String as PropType<'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'current'>,
       default: 'md'
     },
     align: {
@@ -42,7 +42,7 @@ export function textPropsDefaults(exProps?: any) {
       default: false
     },
     color: {
-      type: String as PropType<'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue'>,
+      type: String as PropType<'gray' | 'green' | 'indigo' | 'yellow' | 'red' | 'blue' | 'current'>,
       default: 'gray'
     }
   }, exProps)

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, defineProps } from 'vue-demi'
+import { PropType, useSlots, useAttrs } from 'vue'
 
 const props = defineProps({
   type: {

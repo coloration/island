@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { PropType, defineProps } from 'vue-demi'
+import { PropType } from 'vue'
 
 const props = defineProps({
   direction: {
